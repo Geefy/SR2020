@@ -1,11 +1,21 @@
 ﻿body {
-    background-color: #3498db;
+    /*background-color: #3498db;
     font-family: Arial;
     color:white;
-    text-align: center;
+    text-align: center;*/
 }
 
-.InputDiv{
+.field1 {
+    background-color:deepskyblue;
+}
 
+.field2 {
+    background-color:red;
+}
+.field3{
+    background-color:lawngreen;
+}
 
+.textMiddle{
+    text-align:center;
 }
