@@ -16,6 +16,14 @@
     background-color:lawngreen;
 }
 
-/*.textMiddle{
+.textMiddle{
     text-align:center;
-}*/
+}
+
+.test {
+    width: 20%;
+}
+
+.teest {
+    width: 60%;
+}
