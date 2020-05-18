@@ -4,8 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <title>Login Page</title>
     <link href="Styles.css" rel="stylesheet" />
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+    <script src="spa.js"></script>
 </head>
 <body>
     <div>
@@ -20,24 +21,30 @@
                 <p class="col-lg-3 field3">Test</p>
             </div>
 
-            <div class="row">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="textMiddle col-lg-2">Status</th>
-                                <th class=" col-lg-2">Description</th>
-                                <th class="textMiddle col-lg-8">Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!--Code for filling tBody-->
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="page row active" id="MainPage">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="textMiddle col-lg-2">Status</th>
+                            <th class="textMiddle col-lg-2">Description</th>
+                            <th class="textMiddle col-lg-8">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--Code for filling tBody-->
+                        <tr>
+                            <td class="textMiddle">1</td>
+                            <td class="textMiddle">Mark</td>
+                            <td class="textMiddle">Otto</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="nav-link">Next Page</button>
+
+            <div id="NextPage" class="page">
+                <h1>Next Page Title</h1>
+                <button class="nav-link">Go Back</button>
             </div>
         </div>
     </div>

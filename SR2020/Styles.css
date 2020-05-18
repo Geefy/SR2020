@@ -20,10 +20,14 @@
     text-align:center;
 }
 
-.test {
-    width: 20%;
+.page {
+    display:none;
 }
 
-.teest {
-    width: 60%;
+.active {
+    display:block;
+}
+
+.nav-link {
+
 }
