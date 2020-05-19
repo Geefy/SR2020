@@ -4,47 +4,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <title>Login Page</title>
     <link href="Styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="Scripts/spa.js"></script>
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body>
     <div>
-        <h1>Schmitz Radio MERGE TESTING</h1>
+        <h1 class="TopHeader">Schmitz Radio</h1>
     </div>
+    <button onclick="myFunction()">HIT ME</button>
 
-    <div class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <p class="col-lg-3 field1">Main Menu</p>
-                <p class="col-lg-3 field2">Cases</p>
-                <p class="col-lg-3 field3">Test</p>
+    <div>
+        <div class="container" id="ContainerEdit">
+            <div class="CaseContainer">
+                <div class="ColorBox" id="Red">
+
+                </div>
+                <div class="InfoBox">
+                    <p class="InfoBoxText">Text</p>
+                </div>
             </div>
+            <div class="CaseContainer">
+                <div class="ColorBox" id="Green">
 
-            <div class="page row active" id="MainPage">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="textMiddle col-lg-2">Status</th>
-                            <th class="textMiddle col-lg-2">Description</th>
-                            <th class="textMiddle col-lg-8">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!--Code for filling tBody-->
-                        <tr>
-                            <td class="textMiddle">1</td>
-                            <td class="textMiddle">Mark</td>
-                            <td class="textMiddle">Otto</td>
-                        </tr>
-                    </tbody>
-                </table>
-            <button class="nav-link" data-target="NextPage">Next Page</button>
+                </div>
+                <div class="InfoBox">
+                    <p class="InfoBoxText">Text</p>
+                </div>
             </div>
+            <div class="CaseContainer">
+                <div class="ColorBox" id="Blue">
 
-            <div id="NextPage" class="page">
-                <h1>Next Page Title</h1>
-                <button class="nav-link" data-target="MainPage">Go Back</button>
+                </div>
+                <div class="InfoBox">
+                    <p class="InfoBoxText">Text</p>
+                </div>
+            </div>
+            <div class="CaseContainer">
+                <div class="ColorBox" id="Yellow">
+
+                </div>
+                <div class="InfoBox">
+                    <p class="InfoBoxText">Text</p>
+                </div>
             </div>
         </div>
     </div>
