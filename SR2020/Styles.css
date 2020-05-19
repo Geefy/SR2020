@@ -20,10 +20,54 @@
     text-align:center;
 }
 
-.test {
-    width: 20%;
+.TopHeader {
+    background: #6e6d6d;
+    margin-top: 0px;
 }
 
-.teest {
-    width: 60%;
+#ContainerEdit{
+    width: 80%;
+    padding-left: 10%;
+}
+
+.CaseContainer {
+    width: 80%;
+    border: solid 2px;
+    margin: 1%;
+}
+
+.ColorBox {
+    margin: 1%;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.InfoBox {
+    margin: 1%;
+    display: inline-block;
+    border:groove;
+    width: 80%;
+    height: 50px;
+}
+
+.InfoBoxText{
+    float: left;
+}
+
+#Red {
+    background: #ff0000;
+}
+
+#Green {
+    background: #3cd12c;
+}
+
+#Yellow {
+    background: #fff826;
+}
+
+#Blue {
+    background: #2c58d1;
 }
