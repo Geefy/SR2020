@@ -22,12 +22,13 @@
 
 .page {
     display:none;
+    min-width:100%;
 }
 
 .active {
     display:block;
 }
 
-/*.nav-link {
+.nav-link {
 
-}*/
+}
