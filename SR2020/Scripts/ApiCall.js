@@ -1,5 +1,4 @@
-﻿const ul = document.getElementById('authors');
-const url = 'https://randomuser.me/api/?results=1';
+﻿const url = 'https://randomuser.me/api/?results=25';
 
 function createNode(element) {
     return document.createElement(element);
@@ -20,6 +19,7 @@ fetch(url) //set the url of the api
                 span = createNode('span');
             img.src = author.picture.medium;
             span.innerHTML = `${author.name.first} ${author.name.last}`;
+            const ul = document.getElementById('authors');
             append(li, img);
             append(li, span);
             append(ul, li);

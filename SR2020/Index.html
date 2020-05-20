@@ -6,9 +6,11 @@
     <link href="Styles.css" rel="stylesheet" />
     <link href="bootstrap.css" rel="stylesheet" />
 
+    <script src="Scripts/ApiCall.js"></script>
     <script src="Scripts/spa.js"></script>
     <script src="Scripts/JSCase.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
 </head>
 <body>
@@ -18,15 +20,35 @@
     <button onclick="CreateContainer()">Div</button>
     <button onclick="CreateCase()">Case</button>
     <div class="page active" id="Login">
-        <h1>Login page</h1>
-        <button class="nav-link" data-target="MainPage">Back to main page</button>
+
+        <div class="LoginBody">
+            <div class="LoginContainer">
+                <div class="Login">
+                    <input id="Uname" name="Uname" placeholder="Username" />
+                </div>
+                <div class="Login">
+                    <input id="Pword" name="Pword" placeholder="Password" />
+                </div>
+                <div class="Login">
+                    <button class="nav-link" data-target="MainPage" onclick="" id="LoginButton">Login</button>
+                </div>
+                <div class="HyperTextLogin">
+                    <p><a href="">Forgotten password?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="Authors">
+        <h1>Authors</h1>
+        <button class="nav-link" data-target="MainPage">Cases Page</button>
+        <ul id="authors"></ul>
     </div>
     <div class="page" id="MainPage">
-        <button class="nav-link" data-target="Login">hello there</button>
+        <button class="nav-link" data-target="Login">Login Page</button>
+        <button class="nav-link" data-target="Authors">Authors List</button>
         <div class="container" id="ContainerEdit">
             <div class="CaseContainer">
                 <div class="ColorBox" id="Red">
-
                 </div>
                 <div class="InfoBox">
                     <p class="InfoBoxText">Text</p>

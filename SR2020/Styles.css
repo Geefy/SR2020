@@ -81,25 +81,20 @@
     background: #2c58d1;
 }
 
-.LoginBoddy{
-    width: 60%;
-}
-
 .LoginContainer {
-    align-content: center;
-    padding-top: 34%;
+    padding-top: 10%;
 }
 
 .Login{
-    padding-left: 75%;
+    padding-left: 45%;
     padding-top: 1%;
 }
 
 .HyperTextLogin{
-    padding-left: 75%;
+    padding-left: 45%;
     padding-top: 1%;
 }
 
 #LoginButton{
-    width: 60%;
+    width: 9%;
 }
