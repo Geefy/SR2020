@@ -1,4 +1,4 @@
-﻿const url = 'https://randomuser.me/api/?results=1';
+﻿const url = 'https://randomuser.me/api/?results=5';
 
 
 fetch(url) //set the url of the api
