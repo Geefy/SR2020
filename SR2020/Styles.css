@@ -77,15 +77,19 @@
     float: right;
 }
 
+#TopNavBar{
+    width:100%;
+}
 
-@media screen and (max-width: 770px) {
+
+@media screen and (max-width: 550px) {
     #MenuIcon {
         margin: 0;
     }
 
 
     #DropDownBtn {
-        margin-right: -5%;
+        margin-right: -4%;
         margin-top: 0%;
     }
 
@@ -105,4 +109,13 @@
         margin-left:0px;
         position:absolute;
     }*/
+}
+
+
+@media screen and (min-width: 700px) {
+    #DropDownBtn {
+        margin-right:-2%;
+        margin-top: 0%;
+    }
+
 }
