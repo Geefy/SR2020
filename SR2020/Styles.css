@@ -71,3 +71,26 @@
 #Blue {
     background: #2c58d1;
 }
+
+.LoginBoddy{
+    width: 60%;
+}
+
+.LoginContainer {
+    align-content: center;
+    padding-top: 34%;
+}
+
+.Login{
+    padding-left: 75%;
+    padding-top: 1%;
+}
+
+.HyperTextLogin{
+    padding-left: 75%;
+    padding-top: 1%;
+}
+
+#LoginButton{
+    width: 60%;
+}

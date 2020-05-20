@@ -6,52 +6,36 @@
     <link href="Styles.css" rel="stylesheet" />
     <link href="bootstrap.css" rel="stylesheet" />
 
+    <script src="Scripts/ApiCall.js"></script>
     <script src="Scripts/spa.js"></script>
     <script src="Scripts/JSCase.js"></script>
     <script src="Scripts/bootstrap.js"></script>
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
 </head>
 <body>
     <div>
         <h1 class="TopHeader">Schmitz Radio</h1>
     </div>
-    <button onclick="CreateContainer()">Div</button>
-    <button onclick="CreateCase()">Case</button>
-    <div id="MainBody">
-        <div class="container" id="ContainerEdit">
-            <div class="CaseContainer">
-                <div class="ColorBox" id="Red">
+    <div>
+        <h1>Authors</h1>
+        <ul id="authors"></ul>
+    </div>
 
-                </div>
-                <div class="InfoBox">
-                    <p class="InfoBoxText">Text</p>
-                </div>
+    <div class="LoginBoddy">
+        <div class="LoginContainer">
+            <div class="Login">
+                <input id="Uname" name="Uname" placeholder="Username" />
             </div>
-            <div class="CaseContainer">
-                <div class="ColorBox" id="Green">
-
-                </div>
-                <div class="InfoBox">
-                    <p class="InfoBoxText">Text</p>
-                </div>
+            <div class="Login">
+                <input id="Pword" name="Pword" placeholder="Password" />
             </div>
-            <div class="CaseContainer">
-                <div class="ColorBox" id="Blue">
-
-                </div>
-                <div class="InfoBox">
-                    <p class="InfoBoxText">Text</p>
-                </div>
+            <div class="Login">
+                <button onclick="" id="LoginButton">Login</button>
             </div>
-            <div class="CaseContainer">
-                <div class="ColorBox" id="Yellow">
-
-                </div>
-                <div class="InfoBox">
-                    <p class="InfoBoxText">Text</p>
-                </div>
+            <div class="HyperTextLogin">
+                <p><a href="">Forgotten password?</a></p>
             </div>
         </div>
     </div>
+
 </body>
 </html>
