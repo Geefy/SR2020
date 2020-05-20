@@ -17,9 +17,12 @@
     </div>
     <button onclick="CreateContainer()">Div</button>
     <button onclick="CreateCase()">Case</button>
-
-    <button class="nav-link" data-target="MainPage">Back to main page</button>
-    <div id="MainBody" class="page">
+    <div class="page active" id="Login">
+        <h1>Login page</h1>
+        <button class="nav-link" data-target="MainPage">Back to main page</button>
+    </div>
+    <div class="page" id="MainPage">
+        <button class="nav-link" data-target="Login">hello there</button>
         <div class="container" id="ContainerEdit">
             <div class="CaseContainer">
                 <div class="ColorBox" id="Red">
@@ -54,7 +57,6 @@
                 </div>
             </div>
         </div>
-        <button class="nav-link" data-target="Back to login"></button>
     </div>
 </body>
 </html>

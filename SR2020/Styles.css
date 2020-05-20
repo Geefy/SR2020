@@ -56,6 +56,15 @@
     float: left;
 }
 
+.page {
+    display: none;
+    min-width: 100%;
+}
+
+.active {
+    display: block;
+}
+
 #Red {
     background: #ff0000;
 }
