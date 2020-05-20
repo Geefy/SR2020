@@ -84,6 +84,7 @@
     <Content Include="Global.asax" />
     <Content Include="Bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Index.html" />
+    <Content Include="Scripts\ApiCall.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\CaseCreation.js" />
     <Content Include="Scripts\JSCase.js" />
