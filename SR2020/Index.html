@@ -9,6 +9,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Scripts/spa.js"></script>
+    <script src="Scripts/ApiCall.js"></script>
     <script src="Scripts/JSCase.js"></script>
     <script src="Scripts/bootstrap.js"></script>
 </head>
@@ -30,10 +31,13 @@
     <button onclick="CreateContainer()">Div</button>
     <button onclick="CreateCase()">Case</button>
     <div id="MainBody">
+        <div>
+            <h1>Authors</h1>
+            <ul id="WeAreTesting"></ul>
+        </div>
         <div class="container" id="ContainerEdit">
             <div class="CaseContainer">
                 <div class="ColorBox" id="Red">
-
                 </div>
                 <div class="InfoBox">
                     <p class="InfoBoxText">Text</p>
