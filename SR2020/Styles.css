@@ -6,18 +6,19 @@
 }
 
 .field1 {
-    background-color:deepskyblue;
+    background-color: deepskyblue;
 }
 
 .field2 {
-    background-color:red;
-}
-.field3{
-    background-color:lawngreen;
+    background-color: red;
 }
 
-.textMiddle{
-    text-align:center;
+.field3 {
+    background-color: lawngreen;
+}
+
+.textMiddle {
+    text-align: center;
 }
 
 .TopHeader {
@@ -25,7 +26,7 @@
     margin-top: 0px;
 }
 
-#ContainerEdit{
+#ContainerEdit {
     width: 80%;
     padding-left: 10%;
 }
@@ -47,12 +48,12 @@
 .InfoBox {
     margin: 1%;
     display: inline-block;
-    border:groove;
+    border: groove;
     width: 80%;
     height: 50px;
 }
 
-.InfoBoxText{
+.InfoBoxText {
     float: left;
 }
 
@@ -70,4 +71,38 @@
 
 #Blue {
     background: #2c58d1;
+}
+
+#MenuIcon {
+    float: right;
+}
+
+
+@media screen and (max-width: 770px) {
+    #MenuIcon {
+        margin: 0;
+    }
+
+
+    #DropDownBtn {
+        margin-right: -5%;
+        margin-top: 0%;
+    }
+
+    .navbar-header {
+        float: left;
+    }
+
+    .navbar-brand {
+        float: right;
+    }
+
+    ul.nav {
+        float: right;
+    }
+    /*#Testid {
+        margin-right:-15px;
+        margin-left:0px;
+        position:absolute;
+    }*/
 }
