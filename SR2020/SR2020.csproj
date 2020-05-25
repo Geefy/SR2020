@@ -83,15 +83,17 @@
     <Content Include="bootstrap.css" />
     <Content Include="Global.asax" />
     <Content Include="Bootstrap\glyphicons-halflings-regular.svg" />
-    <Content Include="Index.html" />
+    <Content Include="Spa.html" />
     <Content Include="Scripts\ApiCall.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\CaseCreation.js" />
     <Content Include="Scripts\JSCase.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\spa.js" />
-    <Content Include="Styles.css" />
+    <Content Include="Stylesheets\MobileStyles.css" />
+    <Content Include="Stylesheets\Styles.css" />
     <Content Include="Web.config" />
+    <Content Include="Index.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -99,6 +101,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bootstrap\glyphicons-halflings-regular.eot" />
