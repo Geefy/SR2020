@@ -3,7 +3,6 @@
     div.className = 'container';
     div.id = 'ContainerEdit';
     document.getElementById("MainBody").appendChild(div);
-
 }
 
 function CreateCase() {
