@@ -17,21 +17,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Views\Home\bootstrap.css" />
-    <Content Include="Views\Home\Scripts\ApiCall.js" />
-    <Content Include="Views\Home\Scripts\bootstrap.js" />
-    <Content Include="Views\Home\Scripts\CaseCreation.js" />
-    <Content Include="Views\Home\Scripts\JSCase.js" />
-    <Content Include="Views\Home\Scripts\npm.js" />
-    <Content Include="Views\Home\Scripts\spa.js" />
-    <Content Include="Views\Home\Stylesheets\MobileStyles.css" />
-    <Content Include="Views\Home\Stylesheets\Styles.css" />
+    <None Include="wwwroot\css\bootstrap.css" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Home\Scripts\" />
+    <Folder Include="Views\Home\Stylesheets\" />
   </ItemGroup>
 
 </Project>
