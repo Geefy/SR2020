@@ -27,7 +27,8 @@
 
 #ContainerEdit{
     width: 80%;
-    padding-left: 10%;
+    padding-left: 15%;
+    box-sizing:unset;
 }
 
 .CaseContainer {
