@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="bootstrap.css" />
+    <None Remove="Views\Home\Scripts\ApiCall.js" />
+    <None Remove="Views\Home\Scripts\bootstrap.js" />
+    <None Remove="Views\Home\Scripts\CaseCreation.js" />
+    <None Remove="Views\Home\Scripts\JSCase.js" />
+    <None Remove="Views\Home\Scripts\npm.js" />
+    <None Remove="Views\Home\Scripts\spa.js" />
+    <None Remove="Views\Home\Stylesheets\MobileStyles.css" />
+    <None Remove="Views\Home\Stylesheets\Styles.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Home\bootstrap.css" />
+    <Content Include="Views\Home\Scripts\ApiCall.js" />
+    <Content Include="Views\Home\Scripts\bootstrap.js" />
+    <Content Include="Views\Home\Scripts\CaseCreation.js" />
+    <Content Include="Views\Home\Scripts\JSCase.js" />
+    <Content Include="Views\Home\Scripts\npm.js" />
+    <Content Include="Views\Home\Scripts\spa.js" />
+    <Content Include="Views\Home\Stylesheets\MobileStyles.css" />
+    <Content Include="Views\Home\Stylesheets\Styles.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>
