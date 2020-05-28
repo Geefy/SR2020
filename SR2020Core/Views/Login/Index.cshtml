@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section LoginScripts{ 
+    <script type="text/javascript" language="javascript" src="~/js/JSCase.js"></script>
+}
+
+<div class="LoginBody">
+    <div class="LoginContainer">
+        <div class="Login">
+            <input id="Uname" name="Uname" placeholder="Username" />
+        </div>
+        <div class="Login">
+            <input id="Pword" name="Pword" placeholder="Password" />
+        </div>
+        <div class="Login">
+            <button class="nav-link" type="button" onclick="IdentityLogin()" data-target="MainPage" id="LoginButton">Login</button>
+        </div>
+        <div class="HyperTextLogin">
+            <p><a href="">Forgotten password?</a></p>
+        </div>
+    </div>
+</div>

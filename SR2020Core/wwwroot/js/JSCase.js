@@ -25,3 +25,7 @@ function CreateCase() {
     document.getElementById('1').appendChild(infoBox);
     document.getElementById('infoBoxTest').appendChild(InfoText);
 }
+
+function IdentityLogin() {
+    console.log("I work");
+}

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -31,6 +32,11 @@ namespace SR2020Core
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.Configure<RazorViewEngineOptions>(o => {
+                o.ViewLocationFormats.Clear();
+                o.ViewLocationFormats.Add("/Views/{1}/{0}" + RazorViewEngine.ViewExtension);
+                o.ViewLocationFormats.Add("/Views/Login/Index" + RazorViewEngine.ViewExtension);
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -49,7 +55,7 @@ namespace SR2020Core
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(@"/Views/Login/Index.cshtml");
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

@@ -11,12 +11,6 @@
     <link href="~/css/MobileStyles.css" rel="stylesheet" media="screen and (max-width: 500px)" />
     <link href="~/css/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)" />
 
-    @*<script src="Scripts/ApiCall.js"></script>
-        <script src="Scripts/spa.js"></script>
-        <script src="Scripts/JSCase.js"></script>
-        <script src="Scripts/bootstrap.js"></script>*@
-
-    <script src="~/js/site.js"></script>
     <script src="~/js/ApiCall.js"></script>
     <script src="~/js/bootstrap.js"></script>
     <script src="~/js/CaseCreation.js"></script>
@@ -26,6 +20,7 @@
 </head>
 <body>
 
+    @RenderSection("LoginScripts")
     @RenderBody()
 
     @RenderSection("Scripts", required: false)
