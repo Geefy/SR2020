@@ -1,31 +1,45 @@
-﻿body {
+﻿/*#region GeneralStyling*/
+body {
     /*background-color: #3498db;
     font-family: Arial;
     color:white;
     text-align: center;*/
 }
 
-.field1 {
-    background-color:deepskyblue;
+.page {
+    display: none;
+    min-width: 100%;
 }
 
-.field2 {
-    background-color:red;
-}
-.field3{
-    background-color:lawngreen;
+.active {
+    display: block;
 }
 
-.textMiddle{
-    text-align:center;
+.textMiddle {
+    text-align: center;
+}
+/*#endregion*/
+
+/*#region CaseColors*/
+#Red {
+    background: #ef5350;
 }
 
-.TopHeader {
-    background: #6e6d6d;
-    margin-top: 0px;
+#Green {
+    background: #66bb6a;
 }
 
-#ContainerEdit{
+#Yellow {
+    background: #ffee58;
+}
+
+#Blue {
+    background: #42a5f5;
+}
+/*#endregion*/
+
+/*#region Cases*/
+#ContainerEdit {
     width: 80%;
     padding-left: 10%;
 }
@@ -47,58 +61,36 @@
 .InfoBox {
     margin: 1%;
     display: inline-block;
-    border:groove;
+    border: groove;
     width: 80%;
     height: 50px;
 }
 
-.InfoBoxText{
+.InfoBoxText {
     float: left;
 }
+/*#endregion*/
 
-.page {
-    display: none;
-    min-width: 100%;
-}
 
-.active {
-    display: block;
-}
-
-#Red {
-    background: #ff0000;
-}
-
-#Green {
-    background: #3cd12c;
-}
-
-#Yellow {
-    background: #fff826;
-}
-
-#Blue {
-    background: #2c58d1;
-}
-
+/*#region Login*/
 .LoginContainer {
     padding-top: 10%;
 }
 
-.Login{
+.Login {
     padding-left: 45%;
     padding-top: 1%;
 }
 
-.HyperTextLogin{
+.HyperTextLogin {
     padding-left: 45%;
     padding-top: 1%;
 }
 
-#LoginButton{
+#LoginButton {
     width: 9%;
 }
-
+/*#endregion*/
 .navbar-color {
     color: #005F85 !important;
 }
@@ -106,4 +98,11 @@
 a:hover {
     background-color: #fff !important;
     text-decoration: none !important;
+}
+
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
 }

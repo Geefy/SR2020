@@ -3,10 +3,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <title>Login Page</title>
-    <link href="Stylesheets/MobileStyles.css" rel="stylesheet" media="screen and (max-width: 500px)"/>
-    <link href="Stylesheets/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)"/>
+    <link href="Stylesheets/MobileStyles.css" rel="stylesheet" media="screen and (max-width: 500px)" />
+    <link href="Stylesheets/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)" />
     <link href="bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="Scripts/ApiCall.js"></script>
     <script src="Scripts/spa.js"></script>
@@ -19,14 +20,10 @@
     <!--navigation bar-->
     <!--<nav class="navbar navbar-inverse">-->
     <div class="w3-bar">
-        <a href="" class="w3-bar-item w3-button">Schmitz Radio</a>
+        <a href="" class="w3-bar-item w3-button" id="LogoArea"><h2>SCHMIDTS RADIO</h2></a>
         <div class="w3-dropdown-hover w3-right" id="DropDownBtn">
-            <button class="w3-button navbar-color"><svg class="bi bi-person-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z" />
-    <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-    <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
-</svg></button>
-            <div class="w3-dropdown-content w3-bar-block w3-border navbar-color" style="right:0">
+            <button class="w3-button navbar-color" id="DropdownNav"><h3><i class="fa fa-user-circle-o" aria-hidden="true"></i></h3></button>
+            <div class="w3-dropdown-content w3-bar-block w3-border navbar-color" id="DropdownBox" style="right:0">
                 <a href="#" class="w3-bar-item w3-button">Link 1</a>
                 <a href="#" class="w3-bar-item w3-button">Link 2</a>
                 <a href="#" class="w3-bar-item w3-button">Link 3</a>
@@ -65,8 +62,9 @@
         <button class="nav-link" data-target="Authors">Authors List</button>
         <div class="container" id="ContainerEdit">
             <div class="CaseContainer">
-                <div class="ColorBox" id="Red">
-                </div>
+                    <div class="ColorBox" id="Red">
+                    </div>
+
                 <div class="InfoBox">
                     <p class="InfoBoxText">Text</p>
                 </div>
