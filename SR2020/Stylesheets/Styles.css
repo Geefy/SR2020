@@ -98,3 +98,12 @@
 #LoginButton{
     width: 9%;
 }
+
+.navbar-color {
+    color: #005F85 !important;
+}
+
+a:hover {
+    background-color: #fff !important;
+    text-decoration: none !important;
+}
