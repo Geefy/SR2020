@@ -1,4 +1,4 @@
-﻿const url = 'https://randomuser.me/api/?results=5';
+﻿const url = 'https://randomuser.me/api/?results=25';
 
 
 fetch(url) //set the url of the api
@@ -11,7 +11,7 @@ fetch(url) //set the url of the api
                 span = createNode('span');
             img.src = author.picture.medium;
             span.innerHTML = `${author.name.first} ${author.name.last}`;
-            var ul = document.getElementById('WeAreTesting');
+            const ul = document.getElementById('authors');
             append(li, img);
             console.log(img);
             append(li, span);

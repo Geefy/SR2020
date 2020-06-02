@@ -6,19 +6,18 @@
 }
 
 .field1 {
-    background-color: deepskyblue;
+    background-color:deepskyblue;
 }
 
 .field2 {
-    background-color: red;
+    background-color:red;
+}
+.field3{
+    background-color:lawngreen;
 }
 
-.field3 {
-    background-color: lawngreen;
-}
-
-.textMiddle {
-    text-align: center;
+.textMiddle{
+    text-align:center;
 }
 
 .TopHeader {
@@ -26,7 +25,7 @@
     margin-top: 0px;
 }
 
-#ContainerEdit {
+#ContainerEdit{
     width: 80%;
     padding-left: 10%;
 }
@@ -48,12 +47,12 @@
 .InfoBox {
     margin: 1%;
     display: inline-block;
-    border: groove;
+    border:groove;
     width: 80%;
     height: 50px;
 }
 
-.InfoBoxText {
+.InfoBoxText{
     float: left;
 }
 
@@ -82,60 +81,19 @@
     background: #2c58d1;
 }
 
-#MenuIcon {
-    float: right;
-}
-
-#TopNavBar{
-    width:100%;
-}
-
-
-@media screen and (max-width: 550px) {
-    #MenuIcon {
-        margin: 0;
-    }
-
 .LoginContainer {
     padding-top: 10%;
 }
 
-    #DropDownBtn {
-        margin-right: -4%;
-        margin-top: 0%;
-    }
-
-    .navbar-header {
-        float: left;
-    }
-
 .Login{
     padding-left: 45%;
     padding-top: 1%;
-    .navbar-brand {
-        float: right;
-    }
-
-    ul.nav {
-        float: right;
-    }
-    /*#Testid {
-        margin-right:-15px;
-        margin-left:0px;
-        position:absolute;
-    }*/
 }
 
 .HyperTextLogin{
     padding-left: 45%;
     padding-top: 1%;
 }
-
-@media screen and (min-width: 700px) and (max-width: 1280px) {
-    #DropDownBtn {
-        margin-right:-2%;
-        margin-top: 0%;
-    }
 
 #LoginButton{
     width: 9%;

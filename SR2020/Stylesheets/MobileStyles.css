@@ -1,11 +1,4 @@
-﻿body {
-    /*background-color: #3498db;
-    font-family: Arial;
-    color:white;
-    text-align: center;*/
-}
-
-.field1 {
+﻿.field1 {
     background-color: deepskyblue;
 }
 
@@ -82,61 +75,35 @@
     background: #2c58d1;
 }
 
-#MenuIcon {
-    float: right;
+
+
+.LoginBody {
+    align-content: center;
 }
-
-#TopNavBar{
-    width:100%;
-}
-
-
-@media screen and (max-width: 550px) {
-    #MenuIcon {
-        margin: 0;
-    }
 
 .LoginContainer {
     padding-top: 10%;
 }
 
-    #DropDownBtn {
-        margin-right: -4%;
-        margin-top: 0%;
-    }
-
-    .navbar-header {
-        float: left;
-    }
-
-.Login{
-    padding-left: 45%;
-    padding-top: 1%;
-    .navbar-brand {
-        float: right;
-    }
-
-    ul.nav {
-        float: right;
-    }
-    /*#Testid {
-        margin-right:-15px;
-        margin-left:0px;
-        position:absolute;
-    }*/
-}
-
-.HyperTextLogin{
-    padding-left: 45%;
+.Login {
+    /*padding-left: 45%;*/
     padding-top: 1%;
 }
 
-@media screen and (min-width: 700px) and (max-width: 1280px) {
-    #DropDownBtn {
-        margin-right:-2%;
-        margin-top: 0%;
-    }
+.HyperTextLogin {
+    /*padding-left: 45%;*/
+    padding-top: 1%;
+}
 
-#LoginButton{
-    width: 9%;
+#LoginButton {
+    width: 20%;
+}
+
+.page {
+    display: none;
+    min-width: 100%;
+}
+
+.active {
+    display: block;
 }
