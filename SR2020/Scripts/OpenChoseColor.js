@@ -1,9 +1,9 @@
 ﻿var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
+//var div = document.getElementsByClassName("SpecialColorBox");
 var span = document.getElementsByClassName("close")[0];
 
 //click on div to open modal
-btn.onclick = function() {
+function OpenModal() {
     modal.style.display = "block";
 }
 
