@@ -1,13 +1,5 @@
 ﻿const url = 'https://randomuser.me/api/?results=25';
 
-function createNode(element) {
-    return document.createElement(element);
-}
-
-function append(parent, el) {
-    return parent.appendChild(el);
-}
-
 
 fetch(url) //set the url of the api
     .then((resp) => resp.json()) // Makes the data we get from API to Json
@@ -21,10 +13,21 @@ fetch(url) //set the url of the api
             span.innerHTML = `${author.name.first} ${author.name.last}`;
             const ul = document.getElementById('authors');
             append(li, img);
+            console.log(img);
             append(li, span);
+            console.log(span);
+            console.log(ul);
             append(ul, li);
         })
     })
     .catch(function (error) {
         console.log(error);
     })
+
+function createNode(element) {
+    return document.createElement(element);
+}
+
+function append(parent, el) {
+    return parent.appendChild(el);
+}
