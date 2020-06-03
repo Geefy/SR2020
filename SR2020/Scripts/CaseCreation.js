@@ -47,14 +47,41 @@ fetch(caseUrl)
 
 var SubmitColor = document.getElementById('NoColor');
 
-function PostData() {
-    const data = {
-        standName: $('#standName').val(),
-        colorId: SubmitColor.id,
-        caseDescription: $('#caseDescription').val()
-    }
-    console.log(data);
-    //$.post(postUrl, data, function (data, status) {
-    //    console.log(`${data} and status is ${status}`)
-    //});
+//function PostData() {
+//    const data = {
+//        standName: $('#standName').val(),
+//        colorId: SubmitColor.id,
+//        caseDescription: $('#caseDescription').val()
+//    }
+//    console.log(data);
+//    //$.post(postUrl, data, function (data, status) {
+//    //    console.log(`${data} and status is ${status}`)
+//    //});
+//}
+
+
+    var stander = document.getElementById('standName').innerHTML;
+    var description = document.getElementById('caseDescription').innerHTML;
+function PostData()
+{
+    (async () => {
+        const rawResponse = await fetch(postUrl, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                standName: stander,
+                colorId: SubmitColor.id,
+                caseDescription: description
+            })
+        });
+        const content = await rawResponse.json();
+        console.log(stander);
+        console.log(SubmitColor.id);
+        console.log(description);
+        console.log(content);
+    })();
+
 }
