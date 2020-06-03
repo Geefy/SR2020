@@ -79,7 +79,7 @@ body {
 /*#endregion*/
 
 
-#NoColor{
+#NoColor {
     border: solid;
 }
 
@@ -117,7 +117,7 @@ body {
     width: 9%;
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
@@ -143,6 +143,11 @@ textarea{
     width: 80%;
 }
 
+#casecreationBox {
+    width: 15%;
+    margin-left: 10.6%;
+}
+
 .close {
     color: #aaaaaa;
     float: right;
@@ -156,3 +161,4 @@ textarea{
         text-decoration: none;
         cursor: pointer;
     }
+
