@@ -18,6 +18,13 @@ body {
 .textMiddle {
     text-align: center;
 }
+
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
 /*#endregion*/
 
 /*#region CaseColors*/
@@ -100,9 +107,3 @@ a:hover {
     text-decoration: none !important;
 }
 
-.container {
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
-}

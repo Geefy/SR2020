@@ -1,4 +1,24 @@
-﻿/*#region CaseColors*/
+﻿/*#region GeneralStyling*/
+.textMiddle {
+    text-align: center;
+}
+
+.TopHeader {
+    background: #6e6d6d;
+    margin-top: 0px;
+}
+
+.page {
+    display: none;
+    min-width: 100%;
+}
+
+.active {
+    display: block;
+}
+/*#endregion*/
+
+/*#region CaseColors*/
 #Red {
     background: #ef5350;
 }
@@ -16,18 +36,9 @@
 }
 /*#endregion*/
 
-.textMiddle {
-    text-align: center;
-}
-
-.TopHeader {
-    background: #6e6d6d;
-    margin-top: 0px;
-}
-
 /*#region CasesStyling*/
 #ContainerEdit {
-    width: 100%;
+    width: 98%;
 }
 
 .CaseContainer {
@@ -38,19 +49,14 @@
 }
 
 .ColorBox {
-    /*    margin: 1%;
-    border-radius: 10px;
-    width: 50px;
-    height: 50px;
-    display: inline-block;*/
-    margin-top:5%;
+    margin-top: 5%;
     height: 25px;
     width: 25px;
     background-color: #bbb;
     border-radius: 50%;
-    border:1px solid black;
-    float:left;
-    margin-left:1%;
+    border: 1px solid black;
+    float: left;
+    margin-left: 1%;
 }
 
 .InfoBox {
@@ -63,49 +69,45 @@
 }
 
 .InfoBoxText {
-
 }
 /*#endregion*/
-.page {
-    display: none;
-    min-width: 100%;
-}
 
-.active {
-    display: block;
-}
+/*#region W3-StylingChanges*/
 
-.w3-bar{
+.w3-bar {
     background-color: #005F85;
-    height:80px !important;
-    color:#fff;
+    height: 80px !important;
+    color: #fff;
 }
 
 .w3-bar-item {
     height: 80px;
     background-color: #005F85 !important;
-    padding:0px;
+    padding: 0px;
 }
 
-#LogoArea{
-    padding-top:4%;
+#LogoArea {
+    padding-top: 4%;
 }
 
-#DropdownNav{
-    height:80px;
+#DropdownNav {
+    height: 80px;
 }
 
 .w3-dropdown-hover {
     height: 80px !important;
 }
-#DropdownBox{
-    border:0px !important;
+
+#DropdownBox {
+    border: 0px !important;
 }
 
 .w3-dropdown-content {
     border: 0px !important;
 }
+/*#endregion*/
 
+/*#region Login*/
 .LoginBody {
     margin-top: 45%;
     margin-left: 10%;
@@ -124,7 +126,7 @@
 }
 
 .HyperTextLogin {
-    margin-left:12.5%;
+    margin-left: 12.5%;
 }
 
 #LoginButton {
@@ -149,3 +151,4 @@ a:hover {
     background-color: #000 !important;
     text-decoration: none !important;
 }
+/*#endregion*/
