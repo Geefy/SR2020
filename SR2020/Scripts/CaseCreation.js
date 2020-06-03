@@ -45,7 +45,6 @@ fetch(caseUrl)
         console.log(error);
     })
 
-var SubmitColor = document.getElementById('NoColor');
 
 //function PostData() {
 //    const data = {
@@ -60,8 +59,9 @@ var SubmitColor = document.getElementById('NoColor');
 //}
 
 
-    var stander = document.getElementById('standName').innerHTML;
-    var description = document.getElementById('caseDescription').innerHTML;
+    var SubmitColor = document.getElementById('NoColor');
+    var stander = document.getElementById('standName');
+    var description = document.getElementById('caseDescription');
 function PostData()
 {
     (async () => {
@@ -72,16 +72,12 @@ function PostData()
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                standName: stander,
+                standName: stander.value,
                 colorId: SubmitColor.id,
-                caseDescription: description
+                caseDescription: description.value
             })
         });
         const content = await rawResponse.json();
-        console.log(stander);
-        console.log(SubmitColor.id);
-        console.log(description);
-        console.log(content);
     })();
 
 }
