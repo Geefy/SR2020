@@ -55,22 +55,27 @@
         <div class="container">
             <form>
                 <label>Stander:</label>
-                <input type="text" /><br />
+                <input id="standName" type="text" /><br />
                 <label>Vælg farvekode</label>
-                <div class="SpecialColorBox" id="NoColor"></div><br />
-                <textarea>Uddyb din beskrivelse her</textarea><br />
-                <input type="submit" value="Submit" />
+                <div class="SpecialColorBox" id="NoColor" onclick="OpenModal()"></div><br />
             </form>
+            <textarea id="caseDescription">Uddyb din beskrivelse her</textarea><br />
+            <button onclick="PostData()">Submit</button>
             <button id="myBtn">Open Modal</button>
             <div id="myModal" class="modal">
                 <div class="modal-content">
+                    <p>Vælg hvilke farvekode sagen skal have</p>
+                    <button onclick="Red()">Red</button>
+                    <button onclick="Green()">Green</button>
+                    <button onclick="Blue()">Blue</button>
+                    <button onclick="Yellow()">Yellow</button>
                     <span class="close">&times;</span>
-                    <p>This is the modal</p>
                 </div>
             </div>
         </div>
     </div>
     <script src="Scripts/OpenChoseColor.js"></script>
     <script src="Scripts/CaseCreation.js"></script>
+    <script src="Scripts/ChoseColor.js"></script>
 </body>
 </html>
