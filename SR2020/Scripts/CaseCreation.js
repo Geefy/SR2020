@@ -1,4 +1,5 @@
 ﻿const caseUrl = 'http://192.168.137.235/api/cases';
+const postUrl = 'http://192.168.137.235/api/cases';
 
 function createNode(element) {
     return document.createElement(element);
@@ -43,3 +44,17 @@ fetch(caseUrl)
     .catch(function (error) {
         console.log(error);
     })
+
+var SubmitColor = document.getElementById('NoColor');
+
+function PostData() {
+    const data = {
+        standName: $('#standName').val(),
+        colorId: SubmitColor.id,
+        caseDescription: $('#caseDescription').val()
+    }
+    console.log(data);
+    //$.post(postUrl, data, function (data, status) {
+    //    console.log(`${data} and status is ${status}`)
+    //});
+}
