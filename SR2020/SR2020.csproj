@@ -85,6 +85,8 @@
     <Content Include="Bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\ChoseColor.js" />
     <Content Include="Scripts\OpenChoseColor.js" />
+    <Content Include="Scripts\Sorting.js" />
+    <Content Include="Scripts\TimerTest.js" />
     <Content Include="Spa.html" />
     <Content Include="Scripts\ApiCall.js" />
     <Content Include="Scripts\bootstrap.js" />
