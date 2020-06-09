@@ -1,31 +1,45 @@
-﻿body {
+﻿/*#region GeneralStyling*/
+body {
     /*background-color: #3498db;
     font-family: Arial;
     color:white;
     text-align: center;*/
 }
 
-.field1 {
-    background-color:deepskyblue;
+.page {
+    display: none;
+    min-width: 100%;
 }
 
-.field2 {
-    background-color:red;
-}
-.field3{
-    background-color:lawngreen;
+.active {
+    display: block;
 }
 
-.textMiddle{
-    text-align:center;
+.textMiddle {
+    text-align: center;
+}
+/*#endregion*/
+
+/*#region CaseColors*/
+#Red {
+    background: #ef5350;
 }
 
-.TopHeader {
-    background: #6e6d6d;
-    margin-top: 0px;
+#Green {
+    background: #66bb6a;
 }
 
-#ContainerEdit{
+#Yellow {
+    background: #ffee58;
+}
+
+#Blue {
+    background: #42a5f5;
+}
+/*#endregion*/
+
+/*#region Cases*/
+#ContainerEdit {
     width: 80%;
     padding-left: 10%;
 }
@@ -54,25 +68,18 @@
 .InfoBox {
     margin: 1%;
     display: inline-block;
-    border:groove;
+    border: groove;
     width: 80%;
     height: 50px;
 }
 
-.InfoBoxText{
+.InfoBoxText {
     float: left;
 }
+/*#endregion*/
 
-.page {
-    display: none;
-    min-width: 100%;
-}
 
-.active {
-    display: block;
-}
-
-#NoColor{
+#NoColor {
     border: solid;
 }
 
@@ -96,21 +103,21 @@
     padding-top: 10%;
 }
 
-.Login{
+.Login {
     padding-left: 45%;
     padding-top: 1%;
 }
 
-.HyperTextLogin{
+.HyperTextLogin {
     padding-left: 45%;
     padding-top: 1%;
 }
 
-#LoginButton{
+#LoginButton {
     width: 9%;
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
@@ -136,6 +143,11 @@ textarea{
     width: 80%;
 }
 
+#casecreationBox {
+    width: 15%;
+    margin-left: 10.6%;
+}
+
 .close {
     color: #aaaaaa;
     float: right;
@@ -149,3 +161,4 @@ textarea{
         text-decoration: none;
         cursor: pointer;
     }
+

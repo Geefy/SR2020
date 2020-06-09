@@ -2,20 +2,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
-    <!--Link-->
     <title>Login Page</title>
     <link href="Styles.css" rel="stylesheet" />
     <link href="bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <!--Scripts-->
-    <script src="Scripts/ApiCall.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Scripts/spa.js"></script>
+    <script src="Scripts/ApiCall.js"></script>
     <script src="Scripts/JSCase.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
 </head>
 <body>
+    <div>
+        <h1 class="TopHeader">Schmitz Radio</h1>
+    </div>
     <!--navigation bar-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid" id="TopNavBar">
@@ -29,8 +32,10 @@
             </div>
         </div>
     </nav>
-
+    <button onclick="CreateContainer()">Div</button>
+    <button onclick="CreateCase()">Case</button>
     <div class="page active" id="Login">
+
         <div class="LoginBody">
             <div class="LoginContainer">
                 <div class="Login">
@@ -48,15 +53,15 @@
             </div>
         </div>
     </div>
-
+    <div class="page" id="Authors">
+        <h1>Authors</h1>
+        <button class="nav-link" data-target="MainPage">Cases Page</button>
+        <ul id="authors"></ul>
+    </div>
     <div class="page" id="MainPage">
-        <div>
-            <div>
-                <textarea>stuff stuff stuff</textarea>
-                <button>Submit</button>
-            </div>
-        </div>
-        <!--<div class="container" id="ContainerEdit">
+        <button class="nav-link" data-target="Login">Login Page</button>
+        <button class="nav-link" data-target="Authors">Authors List</button>
+        <div class="container" id="ContainerEdit">
             <div class="CaseContainer">
                 <div class="ColorBox" id="Red">
                 </div>
@@ -64,9 +69,31 @@
                     <p class="InfoBoxText">Text</p>
                 </div>
             </div>
-        </div>-->
+            <div class="CaseContainer">
+                <div class="ColorBox" id="Green">
+
+                </div>
+                <div class="InfoBox">
+                    <p class="InfoBoxText">Text</p>
+                </div>
+            </div>
+            <div class="CaseContainer">
+                <div class="ColorBox" id="Blue">
+
+                </div>
+                <div class="InfoBox">
+                    <p class="InfoBoxText">Text</p>
+                </div>
+            </div>
+            <div class="CaseContainer">
+                <div class="ColorBox" id="Yellow">
+
+                </div>
+                <div class="InfoBox">
+                    <p class="InfoBoxText">Text</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-
 </body>
 </html>

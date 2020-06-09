@@ -3,10 +3,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <title>Login Page</title>
-    <link href="Stylesheets/MobileStyles.css" rel="stylesheet" media="screen and (max-width: 500px)"/>
-    <link href="Stylesheets/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)"/>
-    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="Stylesheets/MobileStyles.css" rel="stylesheet" media="screen and (max-width: 500px)" />
+    <link href="Stylesheets/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)" />
+    <!--<link href="bootstrap.css" rel="stylesheet" />-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <script src="Scripts/Sorting.js"></script>
@@ -20,11 +21,11 @@
 <body>
     <!--navigation bar-->
     <!--<nav class="navbar navbar-inverse">-->
-    <div class="w3-bar w3-black">
-        <a href="" class="w3-bar-item w3-button">Schmitz Radio</a>
+    <div class="w3-bar">
+        <a href="" class="w3-bar-item w3-button" id="LogoArea"><h2>SCHMIDTS RADIO</h2></a>
         <div class="w3-dropdown-hover w3-right" id="DropDownBtn">
-            <button class="w3-button w3-black">Dropdown</button>
-            <div class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
+            <button class="w3-button navbar-color" id="DropdownNav"><h3><i class="fa fa-user-circle-o" aria-hidden="true"></i></h3></button>
+            <div class="w3-dropdown-content w3-bar-block w3-border navbar-color" id="DropdownBox" style="right:0">
                 <a href="#" class="w3-bar-item w3-button">Link 1</a>
                 <a href="#" class="w3-bar-item w3-button">Link 2</a>
                 <a href="#" class="w3-bar-item w3-button">Link 3</a>
@@ -54,7 +55,7 @@
     </div>
 
     <div class="page" id="MainPage">
-        <div class="container">
+        <div class="container" id="casecreationBox">
             <form>
                 <label>Stander:</label>
                 <input id="standName" type="text" /><br />
