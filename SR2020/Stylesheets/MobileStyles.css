@@ -16,6 +16,25 @@
 }
 /*#endregion*/
 
+/*#region GeneralStyling*/
+.w3-button:hover {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+.w3-dropdown-hover:hover > .w3-button:first-child, .w3-dropdown-click:hover > .w3-button:first-child {
+    background-color: #fff !important;
+    color: #000;
+}
+
+.w3-button:hover {
+    background-color: #fff !important;
+}
+
+textarea {
+    resize: none;
+}
+
 .textMiddle {
     text-align: center;
 }
@@ -25,47 +44,6 @@
     margin-top: 0px;
 }
 
-/*#region CasesStyling*/
-#ContainerEdit {
-    width: 100%;
-}
-
-.CaseContainer {
-    width: 100%;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin: 1%;
-}
-
-.ColorBox {
-    /*    margin: 1%;
-    border-radius: 10px;
-    width: 50px;
-    height: 50px;
-    display: inline-block;*/
-    margin-top:5%;
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    border:1px solid black;
-    float:left;
-    margin-left:1%;
-}
-
-.InfoBox {
-    margin: 1%;
-    display: inline-block;
-    border: 2px solid gray;
-    border-radius: 5px;
-    width: 87.5%;
-    height: 50px;
-}
-
-.InfoBoxText {
-
-}
-/*#endregion*/
 .page {
     display: none;
     min-width: 100%;
@@ -75,37 +53,48 @@
     display: block;
 }
 
-.w3-bar{
-    background-color: #005F85;
-    height:80px !important;
-    color:#fff;
+.page {
+    display: none;
+    min-width: 100%;
+}
+
+.active {
+    display: block;
+}
+/*#endregion*/
+
+/*#region W3Styling*/
+.w3-bar {
+    background-color: #fff;
+    height: 80px !important;
+    color: #000;
+    border-bottom: 1px solid #ccc;
 }
 
 .w3-bar-item {
     height: 80px;
-    background-color: #005F85 !important;
-    padding:0px;
+    background-color: #fff;
+    padding: 0px !important;
 }
 
-#LogoArea{
-    padding-top:4%;
-}
-
-#DropdownNav{
-    height:80px;
+#DropdownNav {
+    height: 80px;
 }
 
 .w3-dropdown-hover {
     height: 80px !important;
 }
-#DropdownBox{
-    border:0px !important;
+
+#DropdownBox {
+    border: 0px !important;
 }
 
 .w3-dropdown-content {
     border: 0px !important;
 }
+/*#endregion*/
 
+/*#region Login*/
 .LoginBody {
     margin-top: 45%;
     margin-left: 10%;
@@ -124,7 +113,7 @@
 }
 
 .HyperTextLogin {
-    margin-left:12.5%;
+    margin-left: 12.5%;
 }
 
 #LoginButton {
@@ -132,20 +121,109 @@
     margin-left: 35%
 }
 
-.page {
-    display: none;
-    min-width: 100%;
+/*#endregion*/
+
+/*#region Navbar*/
+#LogoArea {
+    width: 50%;
 }
 
-.active {
-    display: block;
+#SchmidtsRadioLogo {
+    margin-top: 12.5%;
+    height: 40px;
 }
 
 .navbar-color {
-    color: #fff !important;
+    color: #2ea3f2 !important;
 }
 
 a:hover {
     background-color: #000 !important;
     text-decoration: none !important;
 }
+/*#endregion*/
+
+/*#region Cases*/
+.lastStatus {
+    float: left;
+}
+
+.collapseableCaseName {
+    width: 60%;
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.collapseableTimer {
+    display: inline-block;
+    width: 20%
+}
+
+#caseHeading {
+    margin: 0px !important;
+    color: #fff;
+}
+
+.ColorBox {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    float: left;
+    display: inline-block;
+    border:1px solid white;
+}
+
+#casesHeader {
+    text-align: center;
+    background-color: #005e85;
+}
+
+.collapsible {
+    background-color: #2ea3f2;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    display: inline-block;
+    border: 1px solid #f1f1f1;
+}
+
+    .collapsible:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.collapseableCommentArea {
+    width: 100%;
+}
+
+.workerOnCase {
+    float: left;
+}
+
+.caseButton {
+    float: right;
+    margin-top: 2%;
+}
+/*#endregion*/
+

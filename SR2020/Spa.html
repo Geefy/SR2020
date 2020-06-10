@@ -3,10 +3,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <title>Login Page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="Stylesheets/MobileStyles.css" rel="stylesheet" media="screen and (max-width: 500px)" />
     <link href="Stylesheets/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)" />
-    <link href="bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--<link href="bootstrap.css" rel="stylesheet" />-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -19,13 +19,15 @@
     <!--navigation bar-->
     <!--<nav class="navbar navbar-inverse">-->
     <div class="w3-bar">
-        <a href="" class="w3-bar-item w3-button" id="LogoArea"><h2>SCHMIDTS RADIO</h2></a>
+        <a href="" class="w3-bar-item w3-button" id="LogoArea">
+            <img src="Images/SRO-header-logo-vektor.svg" id="SchmidtsRadioLogo" />
+        </a>
         <div class="w3-dropdown-hover w3-right" id="DropDownBtn">
-            <button class="w3-button navbar-color" id="DropdownNav"><h3><i class="fa fa-user-circle-o" aria-hidden="true"></i></h3></button>
+            <button class="w3-button navbar-color" id="DropdownNav"><h3><i class="fa fa-bars" aria-hidden="true"></i></h3></button>
             <div class="w3-dropdown-content w3-bar-block w3-border navbar-color" id="DropdownBox" style="right:0">
-                <a href="#" class="w3-bar-item w3-button">Link 1</a>
-                <a href="#" class="w3-bar-item w3-button">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button">Link 3</a>
+                <a href="#" class="w3-bar-item w3-button dropdownButton">Link 1</a>
+                <a href="#" class="w3-bar-item w3-button dropdownButton">Link 2</a>
+                <a href="#" class="w3-bar-item w3-button dropdownButton">Link 3</a>
             </div>
         </div>
     </div>
@@ -52,6 +54,40 @@
     </div>
 
     <div class="page" id="MainPage">
+        <div id="casesHeader"><h1 id="caseHeading">CASES</h1></div>
+        <div class="CasesContainer">
+            <button class="collapsible"><div class="ColorBox" id="Red"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
+            <div class="content">
+                <p>Kunde: Netto</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="lastStatus">Sidste status: 14:58</p>
+                <button class="w3-btn w3-ripple w3-green caseButton">UDFØRT</button>
+            </div>
+            <button class="collapsible"><div class="ColorBox" id="Green"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
+            <div class="content">
+                <p>Kunde: GLAS MADS</p>
+                <p>Tlf:+45 8765 4321</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="workerOnCase">På casen: Claus</p>
+                <button class="w3-btn w3-ripple w3-green caseButton">TAG CASE</button>
+            </div>
+            <button class="collapsible"><div class="ColorBox" id="Yellow"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
+            <div class="content">
+                <p>Kunde: LIDL</p>
+                <p>Tlf:+45 2588 5246</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="workerOnCase">På casen: Lars</p>
+                <button class="w3-btn w3-ripple w3-green caseButton">TAG CASE</button>
+            </div>
+            <button class="collapsible"><div class="ColorBox" id="Blue"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
+            <div class="content">
+                <p>Kunde: Netto</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="lastStatus">Sidste status: 14:58</p>
+                <button class="w3-btn w3-ripple w3-green caseButton">UDFØRT</button>
+            </div>
+        </div>
+
         <div class="container">
             <form>
                 <label>Stander:</label>
@@ -59,9 +95,10 @@
                 <label>Vælg farvekode</label>
                 <div class="SpecialColorBox" id="NoColor" onclick="OpenModal()"></div><br />
             </form>
-            <textarea id="caseDescription">Uddyb din beskrivelse her</textarea><br />
+            <textarea id="caseDescription" placeholder="Uddyb din beskrivelse her"></textarea><br />
             <button onclick="PostData()">Submit</button>
             <button id="myBtn">Open Modal</button>
+            <!-- MODAL -->
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <p>Vælg hvilke farvekode sagen skal have</p>
@@ -74,6 +111,7 @@
             </div>
         </div>
     </div>
+    <script src="Scripts/StylingsJavaScript.js"></script>
     <script src="Scripts/OpenChoseColor.js"></script>
     <script src="Scripts/CaseCreation.js"></script>
     <script src="Scripts/ChoseColor.js"></script>

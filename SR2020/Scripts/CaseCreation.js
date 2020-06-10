@@ -39,6 +39,9 @@ fetch(caseUrl)
             append(document.getElementById(caseContainer.id), colorBox);
             append(document.getElementById(caseContainer.id), infoBox);
             append(infoBox, infoText);
+
+            //append(div, button);
+
         })
     })
     .catch(function (error) {

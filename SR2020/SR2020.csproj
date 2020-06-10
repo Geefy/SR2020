@@ -116,8 +116,10 @@
     <Content Include="bootstrap.css" />
     <Content Include="Global.asax" />
     <Content Include="Bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\SRO-header-logo-vektor.svg" />
     <Content Include="Scripts\ChoseColor.js" />
     <Content Include="Scripts\OpenChoseColor.js" />
+    <Content Include="Scripts\StylingsJavaScript.js" />
     <Content Include="Spa.html" />
     <Content Include="Scripts\ApiCall.js" />
     <Content Include="Scripts\bootstrap.js" />
