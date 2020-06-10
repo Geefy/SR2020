@@ -9,8 +9,23 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <p>Hello world</p>
-            <asp:Button OnClick="ToSpa" runat="server" Text="LetsGoooo" />
+
+            <div class="LoginBody">
+            <div class="LoginContainer">
+                <div class="Login">
+                    <input id="Uname" name="Uname" placeholder="Username" runat="server" />
+                </div>
+                <div class="Login">
+                    <input id="Pword" name="Pword" placeholder="Password" runat="server"/>
+                </div>
+                <div class="Login">
+                    <asp:Button CssClass="nav-link" onclick="ToSpa" id="LoginButton" runat="server"> </asp:Button>
+                </div>
+                <div class="HyperTextLogin">
+                    <p><a href="#">Forgotten password?</a></p>
+                </div>
+            </div>
+        </div>
         </div>
     </form>
 </body>
