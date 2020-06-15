@@ -120,6 +120,8 @@
     <Content Include="Scripts\OpenChoseColor.js" />
     <Content Include="Scripts\Sorting.js" />
     <Content Include="Scripts\TimerTest.js" />
+    <Content Include="Scripts\Test.js" />
+    <Content Include="Scripts\TokenScript.js" />
     <Content Include="Spa.html" />
     <Content Include="Scripts\ApiCall.js" />
     <Content Include="Scripts\bootstrap.js" />
