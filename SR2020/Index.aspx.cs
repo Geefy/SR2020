@@ -21,7 +21,7 @@ namespace SR2020
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoginButton.Text = "To SPA";
+            //LoginButton.Text = "To SPA";
         }
 
         protected void ToSpa(object sender, EventArgs e)
@@ -37,7 +37,8 @@ namespace SR2020
                     var response = client.PostAsJsonAsync("api/auth/Login", userLogin).Result;
                     if (response.IsSuccessStatusCode)
                         Response.Redirect(@"Spa.html");
-                        
+                    else
+                        Uname.Value = "Something went wrong";
                 }
 
             }
