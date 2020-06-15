@@ -155,10 +155,19 @@ textarea {
     font-weight: bold;
 }
 
-    .close:hover,
-    .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
+.container-Edit{
+    width: 60%;
+    margin:auto;
+}
+
+.test2{
+    width:49%;
+    display: inline-block;
+}

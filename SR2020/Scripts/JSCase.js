@@ -25,3 +25,5 @@ function CreateCase() {
     document.getElementById('1').appendChild(infoBox);
     document.getElementById('infoBoxTest').appendChild(InfoText);
 }
+
+var x = "hello world";
