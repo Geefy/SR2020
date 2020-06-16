@@ -12,24 +12,41 @@
     <form id="form1" runat="server">
         <div>
             <div class="LoginBody">
-            <div class="LoginContainer">
-    
-                <div class="Login">
-                    <input id="Uname" name="Uname" placeholder="Username" runat="server" />
-                </div>
-                <div class="Login">
-                    <input id="Pword" name="Pword" placeholder="Password" type="password" runat="server"/>
-                </div>
+                <div class="LoginContainer">
 
-                <div class="Login">
-                    <asp:Button CssClass="nav-link" onclick="ToSpa" id="LoginButton" runat="server"> </asp:Button>
-                    
-                </div>
-                <div class="HyperTextLogin">
-                    <p><a href="#">Forgotten password?</a></p>
+                    <div class="Login">
+                        <input id="Uname" name="Uname" placeholder="Username" runat="server" />
+                    </div>
+                    <div class="Login">
+                        <input id="Pword" name="Pword" placeholder="Password" type="password" runat="server" />
+                    </div>
+                    <%
+                        for (int i = 0; i < 30; i++)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Hellothere");
+                        }
+
+
+                        if (isloggedIn)
+                        {
+                            for (int i = 0; i < 30; i++)
+                            {
+                                System.Diagnostics.Debug.WriteLine("User is Authenticated");
+                            }
+                        }
+                        else
+                            Uname.Value = "Is not logged in";
+
+                        %>
+                    <div class="Login">
+                        <asp:Button CssClass="nav-link" OnClick="ToSpa" ID="LoginButton" runat="server"></asp:Button>
+
+                    </div>
+                    <div class="HyperTextLogin">
+                        <p><a href="#">Forgotten password?</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </form>
 </body>

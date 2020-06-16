@@ -19,6 +19,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Diagnostics;
 
 namespace CookieAuthSampleAPI.Controllers
 {
@@ -26,11 +27,12 @@ namespace CookieAuthSampleAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+
+        public static bool loggedIn = false;
         //Provides the api for user sign in, Change <IdentityUser> to other TUser for more customization
         private readonly SignInManager<IdentityUser> signInManager;
-        //Idk what this does tbh
+        //Used for accessing users in identityDb
         private readonly UserManager<IdentityUser> userManager;
-
         private static string lastLogin;
 
         public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
@@ -84,21 +86,20 @@ namespace CookieAuthSampleAPI.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginCredentials loginCredentials)
         {
             lastLogin = loginCredentials.Username;
 
             IdentityUser appUser = await userManager.FindByNameAsync(loginCredentials.Username);
+            //var user = userManager.FindByIdAsync();
             if (appUser != null)
             {
-                await signInManager.SignOutAsync();
-                Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(appUser, loginCredentials.Password, false, false);
+                var result = await signInManager.PasswordSignInAsync(appUser, loginCredentials.Password, false, false);
                 if (result.Succeeded)
                 {
-
-
+                    Debug.WriteLine(HttpContext.User.Identity.Name);
+                    Debug.WriteLine(HttpContext.User.Identity.IsAuthenticated);
                     return Created("", CreateToken(loginCredentials));
                 }
                 else
@@ -111,10 +112,20 @@ namespace CookieAuthSampleAPI.Controllers
 
         [HttpGet]
         [Route("GetLastLogin")]
-        public string GetLastLogin()
-        {
-            return lastLogin;
+        public IActionResult GetLastLogin()
+        {         
+            return this.Content(lastLogin,"application/json");
         }
+
+        [HttpGet]
+        [Route("GetLogin")]
+        public object GetLoggedInUsers()
+        {
+            //return signInManager.IsSignedIn(userManager.FindByNameAsync("Easy2Write"));
+            return null;
+        }
+
+
         #region
         //[HttpPost]
         //[Route("Login")]
@@ -235,7 +246,7 @@ namespace CookieAuthSampleAPI.Controllers
         [Route("GetToken")]
         public async Task<IActionResult> CreateToken(string userName)
         {
-            if (ModelState.IsValid && User.Identity.IsAuthenticated)
+            if (ModelState.IsValid/* && User.Identity.IsAuthenticated*/)
             {
                 //IdentityUser identityUser = await userManager.FindByNameAsync(credentials.Username);
                 //var result = signInManager.CheckPasswordSignInAsync(identityUser, credentials.Password, false);
