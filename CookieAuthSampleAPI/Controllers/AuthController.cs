@@ -111,9 +111,9 @@ namespace CookieAuthSampleAPI.Controllers
 
         [HttpGet]
         [Route("GetLastLogin")]
-        public string GetLastLogin()
+        public IActionResult GetLastLogin()
         {
-            return lastLogin;
+            return this.Content(lastLogin, "application/json");
         }
         #region
         //[HttpPost]
@@ -233,9 +233,9 @@ namespace CookieAuthSampleAPI.Controllers
 
         [HttpGet]
         [Route("GetToken")]
-        public async Task<IActionResult> CreateToken(string userName)
+        public object GetToken(string userName)
         {
-            if (ModelState.IsValid && User.Identity.IsAuthenticated)
+            if (ModelState.IsValid /*&& User.Identity.IsAuthenticated*/)
             {
                 //IdentityUser identityUser = await userManager.FindByNameAsync(credentials.Username);
                 //var result = signInManager.CheckPasswordSignInAsync(identityUser, credentials.Password, false);
@@ -244,20 +244,20 @@ namespace CookieAuthSampleAPI.Controllers
                 //{
                 SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SRJwtTokens.Key));
                 SigningCredentials creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-                IdentityUser user = await userManager.FindByNameAsync(userName);
+                
 
                 Claim[] claims = new Claim[]
                 {
-                        new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+                        new Claim(JwtRegisteredClaimNames.Sub, userName),
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                        new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
+                        new Claim(JwtRegisteredClaimNames.UniqueName, userName)
                 };
 
                 JwtSecurityToken token = new JwtSecurityToken(
                     SRJwtTokens.Issuer,
                     SRJwtTokens.Audience,
                     claims,
-                    expires: DateTime.Now.AddHours(2).AddMinutes(15),
+                    expires: DateTime.Now.AddMinutes(15),
                     signingCredentials: creds
                 );
 
@@ -267,7 +267,7 @@ namespace CookieAuthSampleAPI.Controllers
                     expiration = token.ValidTo,
                 };
 
-                return Created("", results);
+                return results;
                 //}
                 //else
                 //{

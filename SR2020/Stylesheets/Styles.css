@@ -171,3 +171,8 @@ textarea {
     width:49%;
     display: inline-block;
 }
+
+.StandText{
+    float:right;
+    margin: 2.5%;
+}

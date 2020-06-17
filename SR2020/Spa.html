@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="Scripts/TokenScript.js"></script>
-
-    <script src="Scripts/Sorting.js"></script>
+    <script src="Scripts/ApiCall.js"></script>
     <script src="Scripts/TimerTest.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
     <script src="Scripts/spa.js"></script>
     <script src="Scripts/JSCase.js"></script>
     <script src="Scripts/bootstrap.js"></script>
@@ -33,24 +33,68 @@
             </div>
         </div>
     </div>
+    <div>
+        <!--<div><input type="checkbox" name="mostImportenColor" value="mostImportenColor" id="mostImportenColor" /><label for="mostImportenColor">Mest vigtigte farve</label></div>-->
+        <!--<div><input type="checkbox" name="LeastImportenColor" value="LeastImportenColor" id="LeastImportenColor" /><label for="LeastImportenColor">Mindst vigtigte farve</label></div>-->
+        <div><input type="checkbox" name="ColorId" value="Green" id="Green" /><label for="Green">Sorter ud fra grøn</label></div>
+        <div><input type="checkbox" name="ColorId" value="Red" id="Red" /><label for="Red">Sorter ud fra rød</label></div>
+        <div><input type="checkbox" name="ColorId" value="Yellow" id="Yellow" /><label for="Yellow">Sorter ud fra gul</label></div>
+        <div><input type="checkbox" name="alphabeticalOrder" value="alphabeticalOrder" id="alphabeticalOrder" onchange="doalert(this)" /><label for="alphabeticalOrder">Alfabetisk rækkefølge</label></div>
+        <div><input type="checkbox" name="alphabetical" value="A" id="A" /><label for="A">A</label></div>
+    </div>
+    <div id="MainPage" class="A">
+    </div>
+    <div>
+        <p id="timer"></p>
+    </div>
+    <div>
+        <div class="container-Edit" style="border:solid">
+            <div class="test2">
+                <form>
+                    <h1>Stander creater</h1>
+                    <label>Stand name</label><br />
+                    <input id="stand" placeholder="Stand" /><br />
+                    <label>Kontakt person</label><br />
+                    <input id="owner" placeholder="Person" /><br />
+                    <label>Tlf nr</label><br />
+                    <input id="phone" placeholder="Mobil" /><br />
+                    <button onclick="return PostStand()">Udfør</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <div>
         <div class="container-Edit" style="border:solid">
             <div class="test2">
                 <form>
+                    <h1>Case creater</h1>
                     <label>Stand name</label><br />
-                    <input /><br />
-                    <label>Kontakt person</label><br />
-                    <input /><br />
-                    <label>Tlf nr</label><br />
-                    <input /><br />
-                    <button onclick="PostDataToken()">Udfør</button>
+                    <select id="choseStands" name="choseStands">
+
+                    </select><br />
+                    <label>Chose Color</label><br />
+                    <div class="ColorBox" id="NoColor" onclick="OpenModal()"></div><br />
+                    <label>Case Description</label><br />
+                    <textarea id="description">Description</textarea><br />
+                    <button onclick="PostCase()">Udfør</button>
                 </form>
             </div>
         </div>
     </div>
-    <script src="Scripts/OpenChoseColor.js"></script>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <label>Vælg hvilken farve det skal være</label><br />
+            <div class="ColorBox" id="Red" onclick="Red()"></div>
+            <div class="ColorBox" id="Yellow" onclick="Yellow()"></div>
+            <div class="ColorBox" id="Green" onclick="Green()"></div>
+            <div class="ColorBox" id="Blue" onclick="Blue()"></div>
+        </div>
+    </div>
     <script src="Scripts/CaseCreation.js"></script>
+    <script src="Scripts/OpenChoseColor.js"></script>
     <script src="Scripts/ChoseColor.js"></script>
+    <script src="Scripts/Sorting.js"></script>
 </body>
 </html>

@@ -55,19 +55,3 @@ function PostDataToken() {
         console.log(content);
     })();
 }
-
-(async () => {
-    const rawResponse = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            userName: "Easy2Write",
-            password: "LongAndEasy2!"
-        })
-    });
-    const content = await rawResponse.json();
-    console.log(content);
-})();
