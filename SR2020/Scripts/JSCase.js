@@ -26,4 +26,6 @@ function CreateCase() {
     document.getElementById('infoBoxTest').appendChild(InfoText);
 }
 
-var x = "hello world";
+function AdminPageShow() {
+
+}

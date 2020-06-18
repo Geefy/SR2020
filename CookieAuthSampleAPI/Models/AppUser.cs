@@ -25,5 +25,10 @@ namespace CookieAuthSampleAPI.Models
         //}
 
         public bool IsAdmin { get; set; }
+
+        public override string ToString()
+        {
+            return FName + "," + LName + "," + IsAdmin;
+        }
     }
 }

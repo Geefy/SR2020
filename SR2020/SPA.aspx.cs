@@ -14,6 +14,7 @@ namespace SR2020
             try
             {
                 Token.Value = Session["Token"].ToString();
+                hUser.Value = Session["User"].ToString();
             }
             catch (Exception)
             {

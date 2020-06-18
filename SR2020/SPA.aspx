@@ -25,6 +25,7 @@
 <body>
     <form name="form1" runat="server">
         <asp:HiddenField ID="Token" Value="" runat="server" />
+        <asp:HiddenField ID="hUser" Value="" runat="server" />
 
         <!--navigation bar-->
         <!--<nav class="navbar navbar-inverse">-->
