@@ -17,6 +17,18 @@
 /*#endregion*/
 
 /*#region GeneralStyling*/
+.form-control {
+    border: 1px solid #bdbdbd !important;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
 .w3-button:hover {
     color: #000 !important;
     background-color: #fff !important;
@@ -64,6 +76,10 @@ textarea {
 /*#endregion*/
 
 /*#region W3Styling*/
+#DropdownNav {
+    height: 80px !important;
+}
+
 .w3-bar {
     background-color: #fff;
     height: 80px !important;
@@ -72,55 +88,44 @@ textarea {
 }
 
 .w3-bar-item {
-    height: 80px;
-    background-color: #fff;
     padding: 0px !important;
 }
 
-#DropdownNav {
-    height: 80px;
+.w3-button:hover {
+    background-color: #fff !important;
 }
 
-.w3-dropdown-hover {
-    height: 80px !important;
-}
-
-#DropdownBox {
-    border: 0px !important;
-}
-
-.w3-dropdown-content {
-    border: 0px !important;
+.w3-button {
+    width: 80px;
 }
 /*#endregion*/
 
 /*#region Login*/
 .LoginBody {
-    margin-top: 45%;
-    margin-left: 10%;
-    width: 300px;
-    height: 200px;
+    margin: 0 auto;
+    margin-top: 15%;
+    width: 400px;
+    height: 250px;
     border: 2px solid gray;
     border-radius: 5px;
-    padding: 10%;
+    padding: 2%;
 }
 
 .LoginContainer {
 }
 
-#Pword {
-    margin-top: 5%;
+.Login {
+    margin-top: 2.5%;
 }
 
 .HyperTextLogin {
-    margin-left: 12.5%;
+    float: right;
 }
 
 #LoginButton {
-    margin-top: 5%;
-    margin-left: 35%
+    margin: 0 auto;
+    float: left;
 }
-
 /*#endregion*/
 
 /*#region Navbar*/
@@ -144,8 +149,30 @@ a:hover {
 /*#endregion*/
 
 /*#region Cases*/
+.form-check-label {
+    font-size: 0.8em;
+}
+
+.StandName {
+    display: inline-block;
+    margin-right: 0.5%;
+}
+
 .lastStatus {
     float: left;
+    margin-top: 5%;
+}
+
+.workerOnCase {
+    float: left;
+    margin-top: 5%;
+}
+
+.caseButton {
+    float: right;
+    margin-left: 1%;
+    margin-top: 2.5%;
+    margin-bottom: 5%;
 }
 
 .collapseableCaseName {
@@ -171,7 +198,6 @@ a:hover {
     border-radius: 50%;
     float: left;
     display: inline-block;
-    border:1px solid white;
 }
 
 #casesHeader {
@@ -180,7 +206,7 @@ a:hover {
 }
 
 .collapsible {
-    background-color: #2ea3f2;
+    background-color: #263238;
     color: white;
     cursor: pointer;
     padding: 18px;
@@ -190,7 +216,6 @@ a:hover {
     outline: none;
     font-size: 15px;
     display: inline-block;
-    border: 1px solid #f1f1f1;
 }
 
     .collapsible:after {
@@ -217,13 +242,88 @@ a:hover {
     width: 100%;
 }
 
-.workerOnCase {
-    float: left;
+
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*#endregion*/
+
+/*#region Create Forms*/
+.CreateFormHeading {
+    background-color: #005e85;
 }
 
-.caseButton {
+.collapseableButtonAndStatus {
+    margin-top: 0.75%;
+    padding-bottom: 2.5%;
+}
+
+.btn {
+    font-size: 1.1em !important;
+}
+
+.test2 {
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.CreaterHeading {
+    text-align: center;
+    margin: 0px !important;
+    color: #fff;
+    padding-top:2.5%;
+    padding-bottom:2.5%;
+}
+
+.CreaterForm {
+    margin-left: 4%;
+}
+
+.CreateFormSpacing {
+    margin-top: 2.5%;
+    width: 95%;
+}
+
+.CreateFormSpacingButton {
+    margin-top: 5%;
+}
+
+.StandText {
     float: right;
-    margin-top: 2%;
+    margin: 2.5%;
+}
+
+.CheckboxSorting {
+    display: inline-block;
+    color: #fff;
+    margin-left: 2%;
+}
+
+.modal {
+    margin-top: 50%;
+}
+
+.ModalColorBox {
+    margin-right: 5%;
+}
+
+#ModalColorBoxContainer {
+    margin-left: 30%;
+}
+
+.modal-content {
+    background-color: #37474f !important;
+    color: #fff;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 12.5%;
+    width: 100%;
+    height: auto;
+    text-align: center;
 }
 /*#endregion*/
 

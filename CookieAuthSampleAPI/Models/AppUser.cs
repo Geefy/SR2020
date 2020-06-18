@@ -8,15 +8,22 @@ namespace CookieAuthSampleAPI.Models
 {
     public class AppUser : IdentityUser
     {
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-
-        private string initials;
-        public string Initials
+        public AppUser() : base()
         {
-            get { return initials = firstName.First() + lastName.First().ToString(); }
+            //Id = Guid.NewGuid().ToString();
         }
 
-        public byte IsAdmin { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
+
+        //private string initials;
+
+
+        //public string Initials
+        //{
+        //    get { return initials = firstName.First() + lastName.First().ToString(); }
+        //}
+
+        public bool IsAdmin { get; set; }
     }
 }
