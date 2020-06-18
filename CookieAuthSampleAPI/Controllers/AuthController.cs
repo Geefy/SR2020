@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Diagnostics;
+using Newtonsoft.Json.Linq;
 
 namespace CookieAuthSampleAPI.Controllers
 {
@@ -97,9 +98,9 @@ namespace CookieAuthSampleAPI.Controllers
                 Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(appUser, loginCredentials.Password, false, false);
                 if (result.Succeeded)
                 {
+                    string temp = "|" + appUser.FName + "," + appUser.LName + "," + appUser.IsAdmin;
 
-
-                    return Created("", CreateToken(loginCredentials));
+                    return Created("", CreateToken(loginCredentials) + temp);
                 }
                 else
                 {
@@ -107,6 +108,19 @@ namespace CookieAuthSampleAPI.Controllers
                 }
             }
             return null;
+        }
+
+        [HttpGet]
+        [Route("GetUser")]
+        public async Task<string> GetUser(string userName)
+        {
+            AppUser appUser = await userManager.FindByNameAsync(userName);
+
+            if(appUser != null)
+            {
+                return appUser.ToString();
+            }
+            return "User not found";
         }
 
         //[HttpGet]

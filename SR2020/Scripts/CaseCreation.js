@@ -296,6 +296,31 @@ function CreateCase() {
     })();
 
 }
+var ult = 'https://localhost:44350/api/auth/GetUser?userName=' + document.getElementById('hUser').value;
+fetch(ult)
+    .then((resp) => resp.text())
+    .then(function (data)
+    {
+        var tings = data.split(',');
+
+
+        if (tings[tings.length - 1] == "False") {
+
+
+            var x = document.querySelectorAll('.adminAccess');
+
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.display = "none";   
+        }
+        }
+
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+
+
+
 
 function CreateUser() {
     var time = GetTimeNow();

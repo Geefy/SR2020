@@ -38,11 +38,12 @@ namespace SR2020
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     var userLogin = new UserCredentials() { Username = Uname.Value, Password = Pword.Value };
                     var response = client.PostAsync("api/auth/Login", new StringContent(
-                    new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(userLogin), System.Text.Encoding.UTF8, "application/json")).Result;
+                    new System.Web.Script.Serialization.JavaScriptSerializer().Serialize(userLogin), System.Text.Encoding.UTF8, "application/json"));
 
-                    if (response.IsSuccessStatusCode)
+                    if (response.Result.IsSuccessStatusCode)
                     {
-                        Session["Token"] = Uname.Value;
+                        Session["Token"] = Guid.NewGuid();
+                        Session["User"] = Uname.Value;
                         Response.Redirect(@"Spa.aspx");
                     }
                     else
