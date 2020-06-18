@@ -27,13 +27,13 @@ namespace CookieAuthSampleAPI.Controllers
     public class AuthController : ControllerBase
     {
         //Provides the api for user sign in, Change <IdentityUser> to other TUser for more customization
-        private readonly SignInManager<AppUser> signInManager;
+        private readonly SignInManager<IdentityUser> signInManager;
         //Idk what this does tbh
-        private readonly UserManager<AppUser> userManager;
+        private readonly UserManager<IdentityUser> userManager;
 
         private static string lastLogin;
 
-        public AuthController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+        public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
@@ -44,7 +44,7 @@ namespace CookieAuthSampleAPI.Controllers
         /// </summary>
         /// <param name="userDetails"></param>
         /// <returns></returns>
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> Register([FromBody] UserDetails userDetails)
@@ -56,7 +56,7 @@ namespace CookieAuthSampleAPI.Controllers
             }
 
             //Insert more stuff like initials if needed
-            AppUser identityUser = new AppUser()
+            IdentityUser identityUser = new IdentityUser()
             {
                 UserName = userDetails.Username,
                 Email = userDetails.Email,
@@ -90,9 +90,9 @@ namespace CookieAuthSampleAPI.Controllers
         [AllowAnonymous]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginCredentials loginCredentials)
-        {           
+        {
 
-            AppUser appUser = await userManager.FindByNameAsync(loginCredentials.Username);
+            IdentityUser appUser = await userManager.FindByNameAsync(loginCredentials.Username);
             if (appUser != null)
             {
                 await signInManager.SignOutAsync();

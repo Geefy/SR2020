@@ -1,5 +1,6 @@
 ﻿const caseUrl = 'http://192.168.137.235/api/cases';
 const formGetUrl = 'http://192.168.137.235/api/stand';
+const userUrl = '';
 
 var startSort = [];
 function createNode(element) {
@@ -208,6 +209,28 @@ function CreateCase() {
     var time = GetTimeNow();
     (async () => {
         const rawResponse = await fetch(caseUrl, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                standName: stander.value,
+                colorCode: SubmitColor.id,
+                lastUpdate: time,
+                caseDescription: description.value
+            })
+        });
+        console.log(time);
+        const content = await rawResponse.json();
+    })();
+
+}
+
+function CreateUser() {
+    var time = GetTimeNow();
+    (async () => {
+        const rawResponse = await fetch(userUrl, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
