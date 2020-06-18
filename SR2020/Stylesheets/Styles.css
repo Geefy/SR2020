@@ -1,4 +1,8 @@
 ﻿/*#region W3Styling*/
+#DropdownNav{
+    height:80px;
+}
+
 .w3-bar {
     background-color: #fff;
     height: 80px !important;
@@ -15,17 +19,19 @@
 }
 
 .w3-button {
-    width:160px;
+    width: 160px;
 }
 /*#endregion*/
 
 /*#region GeneralStyling*/
+.form-control {
+    border: 1px solid #bdbdbd !important;
+}
 
 body {
-    /*background-color: #3498db;
-    font-family: Arial;
-    color:white;
-    text-align: center;*/
+    width: 100% !important;
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
 .page {
@@ -69,16 +75,16 @@ body {
 /*#region Login*/
 .LoginBody {
     margin: 0 auto;
-    margin-top: 20vh;
-    width: 300px;
-    height: 200px;
+    margin-top: 15%;
+    width: 400px;
+    height: 250px;
     border: 2px solid gray;
     border-radius: 5px;
-    padding-left: 2.25%;
-    padding-top: 1.5%;
+    padding: 2%;
 }
 
 .LoginContainer {
+
 }
 
 .Login {
@@ -86,10 +92,12 @@ body {
 }
 
 .HyperTextLogin {
+    float:right;
 }
 
 #LoginButton {
     margin: 0 auto;
+    float:left;
 }
 /*#endregion*/
 
@@ -109,12 +117,18 @@ body {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #37474f !important;
+    color: #fff;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    height:10%;
+    padding-bottom: 2%;
+    width: 30%;
+    height: auto;
+    text-align: center;
+}
+
+#ModalColorBoxContainer {
+    margin-left: 37%;
 }
 
 #casecreationBox {
@@ -138,9 +152,13 @@ body {
 /*#endregion*/
 
 /*#region Cases*/
-.StandName{
-    display:inline-block;
-    margin-right:0.5%;
+.collapseableButtonAndStatus {
+    margin-top:0.75%;
+    padding-bottom: 2.5%;
+}
+.StandName {
+    display: inline-block;
+    margin-right: 0.5%;
 }
 
 .lastStatus {
@@ -149,8 +167,8 @@ body {
 }
 
 .caseButton {
-    float:right;
-    margin-left:1%;
+    float: right;
+    margin-left: 1%;
 }
 
 .collapseableCaseName {
@@ -223,6 +241,7 @@ body {
 .workerOnCase {
     float: left;
 }
+
 .close:hover,
 .close:focus {
     color: #000;
@@ -230,21 +249,20 @@ body {
     cursor: pointer;
 }
 
-.container-Edit{
+.container-Edit {
     width: 30%;
-    margin:auto;
+    margin: auto;
     border: 2px solid gray;
     border-radius: 20px;
 }
 
-.test2{
-    width:100%;
-    margin-bottom:4%;
+.test2 {
+    width: 100%;
+    margin-bottom: 4%;
 }
 
 .CreaterHeading {
-    margin-left:20%;
-    text-decoration:underline;
+    text-align: center;
 }
 
 .CreaterForm {
@@ -265,17 +283,16 @@ body {
     margin: 2.5%;
 }
 
-.CheckboxSorting{
-    display:inline-block;
-    color:#fff;
-    margin-left:25px;
+.CheckboxSorting {
+    display: inline-block;
+    color: #fff;
 }
 
-.ModalColorBox{
-    margin-right:2.5%;
+.ModalColorBox {
+    margin-right: 2.5%;
 }
 
 .modal-content {
     background-color: #37474f !important;
-    color:#fff;
+    color: #fff;
 }
