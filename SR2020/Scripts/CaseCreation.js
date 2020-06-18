@@ -127,22 +127,22 @@ function getChecked(name) {
 
             const boddy = document.getElementById('ContainerEdit');
             boddy.innerHTML = '';
-            
-                var temp = [];
-                for (var i = 0; i < allCases.length; i++) {
-                    var tempObj = { case: allCases[i], string: SplitString(allCases[i].className) };
+
+            var temp = [];
+            for (var i = 0; i < allCases.length; i++) {
+                var tempObj = { case: allCases[i], string: SplitString(allCases[i].className) };
 
 
-                    temp.push(tempObj);
-                }
+                temp.push(tempObj);
+            }
 
-                temp.sort(compare);
+            temp.sort(compare);
 
-                for (var i = 0; i < temp.length; i++) {
-                    append(boddy, temp[i].case);
-                }
+            for (var i = 0; i < temp.length; i++) {
+                append(boddy, temp[i].case);
+            }
 
-            
+
 
             //append(document.getElementById('ContainerEdit'), allCases[allCases.length - 1])
             //$('#9').insertBefore('#8');
@@ -176,7 +176,7 @@ function SplitStringWithNoNumbers(toSplit) {
 
     for (var i = 0; i < a.length; i++) {
         if (Number.isInteger(a.charAt(i)));
-            return a[i];
+        return a[i];
     }
     return 'a';
 }
@@ -192,8 +192,7 @@ function setVisibility() {
         }
     });
 }
-function GetTimeNow()
-{
+function GetTimeNow() {
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -201,11 +200,11 @@ function GetTimeNow()
     return dateTime;
 }
 
-    var SubmitColor = document.getElementById('NoColor');
-    var stander = document.getElementById('choseStands');
-    var description = document.getElementById('description');
-function PostCase()
-{
+var SubmitColor = document.getElementById('NoColor');
+var stander = document.getElementById('choseStands');
+var description = document.getElementById('description');
+
+function CreateCase() {
     var time = GetTimeNow();
     (async () => {
         const rawResponse = await fetch(caseUrl, {

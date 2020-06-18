@@ -125,7 +125,6 @@
     <Content Include="Scripts\TokenScript.js" />
     <Content Include="Scripts\StylingsJavaScript.js" />
     <Content Include="SPA.aspx" />
-    <Content Include="Spa.html" />
     <Content Include="Scripts\ApiCall.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\CaseCreation.js" />

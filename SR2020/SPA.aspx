@@ -23,6 +23,7 @@
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
 </head>
 <body>
+    <asp:HiddenField ID="Token" Value="" runat="server" />
     <!--navigation bar-->
     <!--<nav class="navbar navbar-inverse">-->
     <div class="w3-bar">
@@ -188,7 +189,7 @@
                         <textarea id="description" class="form-control" placeholder="Beskrivelse"></textarea>
                     </div>
 
-                    <button onclick="PostCase()" class="btn btn-success CreateFormSpacingButton">Udfør</button>
+                    <button onclick="CreateCase()" class="btn btn-success CreateFormSpacingButton">Udfør</button>
                 </form>
             </div>
         </div>

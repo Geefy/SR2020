@@ -13,5 +13,14 @@ namespace SR2020
 
     public partial class SPA
     {
+
+        /// <summary>
+        /// Token control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Token;
     }
 }

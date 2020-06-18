@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="Login">
-                    <asp:Button CssClass="nav-link" onclick="ToSpa" id="LoginButton" runat="server"> </asp:Button>
+                    <asp:Button CssClass="nav-link" onclick="Login" id="LoginButton" runat="server"> </asp:Button>
                     
                 </div>
                 <div class="HyperTextLogin">
