@@ -28,9 +28,9 @@ namespace CookieAuthSampleAPI.Controllers
     public class AuthController : ControllerBase
     {
         //Provides the api for user sign in, Change <IdentityUser> to other TUser for more customization
-        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly SignInManager<AppUser> signInManager;
         //Idk what this does tbh
-        private readonly UserManager<IdentityUser> userManager;
+        private readonly UserManager<AppUser> userManager;
 
         public AuthController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
         {
@@ -55,7 +55,7 @@ namespace CookieAuthSampleAPI.Controllers
             }
 
             //Insert more stuff like initials if needed
-            IdentityUser identityUser = new IdentityUser()
+            AppUser identityUser = new AppUser()
             {
                 UserName = userDetails.Username,
                 Email = userDetails.Email,

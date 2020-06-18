@@ -80,23 +80,21 @@
                 </div>
                 <div class="collapseableTimer">02:00:00</div>
             </button>
-            <div>
-                <div class="content">
-                    <p>Kunde navn: Netto</p>
-                    <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
-                    <p class="lastStatus">Sidste status: 14:58</p>
-                    <button class="btn btn-primary caseButton" onclick="OpenUpadteCaseModal()">OPDATER</button>
-                    <button class="btn btn-success caseButton" onclick="OpenCloseCaseModal()">AFSLUT</button>
-                </div>
-                <button class="collapsible">
-                    <div class="ColorBox" id="Green"></div>
-                    <div class="collapseableCaseName">
-                        <p class="StandName">Stander navn:</p>
-                        <p class="StandName">L85A-DK</p>
-                    </div>
-                    <div class="collapseableTimer">02:00:00</div>
-                </button>
+            <div class="content">
+                <p>Kunde navn: Netto</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="lastStatus">Sidste status: 14:58</p>
+                <button class="btn btn-primary caseButton" onclick="OpenUpadteCaseModal()">OPDATER</button>
+                <button class="btn btn-success caseButton" onclick="OpenCloseCaseModal()">AFSLUT</button>
             </div>
+            <button class="collapsible">
+                <div class="ColorBox" id="Green"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
             <div class="content">
                 <p>Kunde navn: GLAS MADS</p>
                 <p>Tlf:+45 8765 4321</p>
