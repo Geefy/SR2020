@@ -19,6 +19,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Diagnostics;
 
 namespace CookieAuthSampleAPI.Controllers
 {
@@ -27,13 +28,11 @@ namespace CookieAuthSampleAPI.Controllers
     public class AuthController : ControllerBase
     {
         //Provides the api for user sign in, Change <IdentityUser> to other TUser for more customization
-        private readonly SignInManager<IdentityUser> signInManager;
+        private readonly SignInManager<AppUser> signInManager;
         //Idk what this does tbh
-        private readonly UserManager<IdentityUser> userManager;
+        private readonly UserManager<AppUser> userManager;
 
-        private static string lastLogin;
-
-        public AuthController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public AuthController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
@@ -56,10 +55,13 @@ namespace CookieAuthSampleAPI.Controllers
             }
 
             //Insert more stuff like initials if needed
-            IdentityUser identityUser = new IdentityUser()
+            AppUser identityUser = new AppUser()
             {
                 UserName = userDetails.Username,
-                Email = userDetails.Email
+                Email = userDetails.Email,
+                FName = "Bob",
+                LName = "Larsen",
+                IsAdmin = false
             };
 
             //userDetails.Password is hashed at this point
@@ -84,13 +86,11 @@ namespace CookieAuthSampleAPI.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginCredentials loginCredentials)
         {
-            lastLogin = loginCredentials.Username;
+            AppUser appUser = await userManager.FindByNameAsync(loginCredentials.Username);
 
-            IdentityUser appUser = await userManager.FindByNameAsync(loginCredentials.Username);
             if (appUser != null)
             {
                 await signInManager.SignOutAsync();
@@ -109,13 +109,13 @@ namespace CookieAuthSampleAPI.Controllers
             return null;
         }
 
-        [HttpGet]
-        [Route("GetLastLogin")]
-        public IActionResult GetLastLogin()
-        {
-            return this.Content(lastLogin, "application/json");
-        }
-        #region
+        //[HttpGet]
+        //[Route("GetLastLogin")]
+        //public IActionResult GetLastLogin()
+        //{
+        //    return this.Content(lastLogin, "application/json");
+        //}
+        //#region
         //[HttpPost]
         //[Route("Login")]
         //public async Task<IActionResult> Login([FromBody] LoginCredentials credentials)
@@ -147,8 +147,7 @@ namespace CookieAuthSampleAPI.Controllers
         //    ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         //    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
         //    return Ok(new { Message = "You are logged in" });
-        //}
-        #endregion
+        //
 
         [HttpPost]
         [Route("Logout")]
@@ -244,7 +243,7 @@ namespace CookieAuthSampleAPI.Controllers
                 //{
                 SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SRJwtTokens.Key));
                 SigningCredentials creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-                
+
 
                 Claim[] claims = new Claim[]
                 {

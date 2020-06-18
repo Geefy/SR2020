@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="Login">
-                        <asp:Button CssClass="nav-link btn btn-success" OnClick="ToSpa" ID="LoginButton" runat="server" Text="LOGIN"></asp:Button>
+                        <asp:Button CssClass="nav-link btn btn-success" OnClick="Login" ID="LoginButton" runat="server" Text="LOGIN"></asp:Button>
                     </div>
 
                     <div class="HyperTextLogin">
