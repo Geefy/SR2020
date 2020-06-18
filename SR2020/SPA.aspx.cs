@@ -11,32 +11,28 @@ namespace SR2020
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Token.Value = Session["Token"].ToString();
+            try
+            {
+                Token.Value = Session["Token"].ToString();
+            }
+            catch (Exception)
+            {
+                CheckSession();
+            }
 
-            CheckSession();
         }
         private void CheckSession()
         {
-            if (Session["Token"] == null)
+            if (Session["Token"] == null || Token.Value == null)
             {
                 Response.Redirect("Index.aspx");
             }
         }
-        protected void EditCase(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Logout(object sender, EventArgs e)
         {
             Session["Token"] = null;
+            Token.Value = null;
             CheckSession();
         }
-        protected void FinishCase(object sender, EventArgs e)
-        {
-            Session["Token"] = null;
-            CheckSession();
-        }
-
     }
 }

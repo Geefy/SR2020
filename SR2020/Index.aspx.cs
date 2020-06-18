@@ -42,7 +42,7 @@ namespace SR2020
 
                     if (response.IsSuccessStatusCode)
                     {
-                        Session["Token"] = Guid.NewGuid().GetHashCode();
+                        Session["Token"] = Uname.Value;
                         Response.Redirect(@"Spa.aspx");
                     }
                     else
