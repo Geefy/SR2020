@@ -7,48 +7,15 @@
 }
 
 .w3-bar-item {
-    height: 80px;
     padding: 0px !important;
 }
 
-#DropdownNav {
-    width: 80px;
-    height: 80px !important;
-}
-
-.dropdownButton {
-    height: 40px !important;
-    padding-top: 6% !important;
-    text-align:center !important;
-    background-color:#ef5350;
-    width:40% !important;
-}
-
-.w3-dropdown-hover {
-    height: 80px !important;
-}
-
-#DropdownBox {
-    border: 0px !important;
-    width:5% !important;
-}
-
-.w3-dropdown-content {
-    border: 0px !important;
-}
-
-.w3-button:hover {
-    color: #000 !important;
-    background-color: #fff !important;
-}
-
-.w3-dropdown-hover:hover > .w3-button:first-child, .w3-dropdown-click:hover > .w3-button:first-child {
-    background-color: #fff !important;
-    color: #000;
-}
-
 .w3-button:hover {
     background-color: #fff !important;
+}
+
+.w3-button {
+    width:160px;
 }
 /*#endregion*/
 
@@ -97,9 +64,6 @@ body {
     background: #42a5f5;
 }
 
-#NoColor {
-    border: solid;
-}
 /*#endregion*/
 
 /*#region Login*/
@@ -150,6 +114,7 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    height:10%;
 }
 
 #casecreationBox {
@@ -173,8 +138,19 @@ body {
 /*#endregion*/
 
 /*#region Cases*/
+.StandName{
+    display:inline-block;
+    margin-right:0.5%;
+}
+
 .lastStatus {
     float: left;
+    margin-top: 0.5%;
+}
+
+.caseButton {
+    float:right;
+    margin-left:1%;
 }
 
 .collapseableCaseName {
@@ -200,7 +176,6 @@ body {
     border-radius: 50%;
     float: left;
     display: inline-block;
-    border: 1px solid white;
 }
 
 #casesHeader {
@@ -209,7 +184,7 @@ body {
 }
 
 .collapsible {
-    background-color: #2ea3f2;
+    background-color: #263238;
     color: white;
     cursor: pointer;
     padding: 18px;
@@ -219,7 +194,6 @@ body {
     outline: none;
     font-size: 15px;
     display: inline-block;
-    border: 1px solid #f1f1f1;
 }
 
     .collapsible:after {
@@ -257,16 +231,51 @@ body {
 }
 
 .container-Edit{
-    width: 60%;
+    width: 30%;
     margin:auto;
+    border: 2px solid gray;
+    border-radius: 20px;
 }
 
 .test2{
-    width:49%;
-    display: inline-block;
+    width:100%;
+    margin-bottom:4%;
 }
 
-.StandText{
-    float:right;
+.CreaterHeading {
+    margin-left:20%;
+    text-decoration:underline;
+}
+
+.CreaterForm {
+    margin-left: 20%;
+}
+
+.CreateFormSpacing {
+    margin-top: 2.5%;
+    width: 75%;
+}
+
+.CreateFormSpacingButton {
+    margin-top: 5%;
+}
+
+.StandText {
+    float: right;
     margin: 2.5%;
+}
+
+.CheckboxSorting{
+    display:inline-block;
+    color:#fff;
+    margin-left:25px;
+}
+
+.ModalColorBox{
+    margin-right:2.5%;
+}
+
+.modal-content {
+    background-color: #37474f !important;
+    color:#fff;
 }

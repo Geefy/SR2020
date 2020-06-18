@@ -124,6 +124,7 @@
     <Content Include="Scripts\Test.js" />
     <Content Include="Scripts\TokenScript.js" />
     <Content Include="Scripts\StylingsJavaScript.js" />
+    <Content Include="SPA.aspx" />
     <Content Include="Spa.html" />
     <Content Include="Scripts\ApiCall.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SPA.aspx.cs">
+      <DependentUpon>SPA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SPA.aspx.designer.cs">
+      <DependentUpon>SPA.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

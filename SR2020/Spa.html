@@ -35,15 +35,52 @@
             </div>
         </div>
     </div>
-    <div>
-        <!--<div><input type="checkbox" name="mostImportenColor" value="mostImportenColor" id="mostImportenColor" /><label for="mostImportenColor">Mest vigtigte farve</label></div>-->
-        <!--<div><input type="checkbox" name="LeastImportenColor" value="LeastImportenColor" id="LeastImportenColor" /><label for="LeastImportenColor">Mindst vigtigte farve</label></div>-->
-        <div><input type="checkbox" name="ColorId" value="Green" id="Green" /><label for="Green">Sorter ud fra grøn</label></div>
-        <div><input type="checkbox" name="ColorId" value="Red" id="Red" /><label for="Red">Sorter ud fra rød</label></div>
-        <div><input type="checkbox" name="ColorId" value="Yellow" id="Yellow" /><label for="Yellow">Sorter ud fra gul</label></div>
-        <div><input type="checkbox" name="alphabeticalOrder" value="alphabeticalOrder" id="alphabeticalOrder" onchange="doalert(this)" /><label for="alphabeticalOrder">Alfabetisk rækkefølge</label></div>
-        <div><input type="checkbox" name="alphabetical" value="A" id="A" /><label for="A">A</label></div>
+    <div id="casesHeader">
+        <h1 id="caseHeading">CASES</h1>
+        <div>
+            <!--<div><input type="checkbox" name="mostImportenColor" value="mostImportenColor" id="mostImportenColor" /><label for="mostImportenColor">Mest vigtigte farve</label></div>-->
+            <!--<div><input type="checkbox" name="LeastImportenColor" value="LeastImportenColor" id="LeastImportenColor" /><label for="LeastImportenColor">Mindst vigtigte farve</label></div>-->
+            <div class="CheckboxSorting"><input type="checkbox" name="ColorId" value="Green" id="Green" /><label for="Green">Sorter ud fra grøn</label></div>
+            <div class="CheckboxSorting"><input type="checkbox" name="ColorId" value="Red" id="Red" /><label for="Red">Sorter ud fra rød</label></div>
+            <div class="CheckboxSorting"><input type="checkbox" name="ColorId" value="Yellow" id="Yellow" /><label for="Yellow">Sorter ud fra gul</label></div>
+            <div class="CheckboxSorting"><input type="checkbox" name="alphabeticalOrder" value="alphabeticalOrder" id="alphabeticalOrder" onchange="doalert(this)" /><label for="alphabeticalOrder">Alfabetisk rækkefølge</label></div>
+            <div class="CheckboxSorting"><input type="checkbox" name="alphabetical" value="A" id="A" /><label for="A">A</label></div>
+        </div>
     </div>
+    <div class="CasesContainer">
+        <button class="collapsible"><div class="ColorBox" id="Red"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
+        <div class="content">
+            <p>Kunde: Netto</p>
+            <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+            <p class="lastStatus">Sidste status: 14:58</p>
+            <button class="w3-btn w3-ripple w3-green caseButton">UDFØRT</button>
+        </div>
+        <button class="collapsible"><div class="ColorBox" id="Green"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
+        <div class="content">
+            <p>Kunde: GLAS MADS</p>
+            <p>Tlf:+45 8765 4321</p>
+            <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+            <p class="workerOnCase">På casen: Claus</p>
+            <button class="w3-btn w3-ripple w3-green caseButton">TAG CASE</button>
+        </div>
+        <button class="collapsible"><div class="ColorBox" id="Yellow"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
+        <div class="content">
+            <p>Kunde: LIDL</p>
+            <p>Tlf:+45 2588 5246</p>
+            <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+            <p class="workerOnCase">På casen: Lars</p>
+            <button class="w3-btn w3-ripple w3-green caseButton">TAG CASE</button>
+        </div>
+        <button class="collapsible"><div class="ColorBox" id="Blue"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
+        <div class="content">
+            <p>Kunde: Netto</p>
+            <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+            <p class="lastStatus">Sidste status: 14:58</p>
+            <button class="w3-btn w3-ripple w3-green caseButton">UDFØRT</button>
+        </div>
+    </div>
+
+
     <div id="MainPage" class="A">
     </div>
     <div>
@@ -66,62 +103,7 @@
         </div>
     </div>
 
-    <div class="page" id="MainPage">
-        <div id="casesHeader"><h1 id="caseHeading">CASES</h1></div>
-        <div class="CasesContainer">
-            <button class="collapsible"><div class="ColorBox" id="Red"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
-            <div class="content">
-                <p>Kunde: Netto</p>
-                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
-                <p class="lastStatus">Sidste status: 14:58</p>
-                <button class="w3-btn w3-ripple w3-green caseButton">UDFØRT</button>
-            </div>
-            <button class="collapsible"><div class="ColorBox" id="Green"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
-            <div class="content">
-                <p>Kunde: GLAS MADS</p>
-                <p>Tlf:+45 8765 4321</p>
-                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
-                <p class="workerOnCase">På casen: Claus</p>
-                <button class="w3-btn w3-ripple w3-green caseButton">TAG CASE</button>
-            </div>
-            <button class="collapsible"><div class="ColorBox" id="Yellow"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
-            <div class="content">
-                <p>Kunde: LIDL</p>
-                <p>Tlf:+45 2588 5246</p>
-                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
-                <p class="workerOnCase">På casen: Lars</p>
-                <button class="w3-btn w3-ripple w3-green caseButton">TAG CASE</button>
-            </div>
-            <button class="collapsible"><div class="ColorBox" id="Blue"></div><div class="collapseableCaseName">L85A-DK</div><div class="collapseableTimer">02:00:00</div></button>
-            <div class="content">
-                <p>Kunde: Netto</p>
-                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
-                <p class="lastStatus">Sidste status: 14:58</p>
-                <button class="w3-btn w3-ripple w3-green caseButton">UDFØRT</button>
-            </div>
-        </div>
 
-        <div class="container">
-            <form>
-                <label>Stander:</label>
-                <input id="standName" type="text" /><br />
-                <label>Vælg farvekode</label>
-                <div class="SpecialColorBox" id="NoColor" onclick="OpenModal()"></div><br />
-            </form>
-            <textarea id="caseDescription" placeholder="Uddyb din beskrivelse her"></textarea><br />
-            <button onclick="PostData()">Submit</button>
-            <button id="myBtn">Open Modal</button>
-            <!-- MODAL -->
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <p>Vælg hvilke farvekode sagen skal have</p>
-                    <button onclick="Red()">Red</button>
-                    <button onclick="Green()">Green</button>
-                    <button onclick="Blue()">Blue</button>
-                    <button onclick="Yellow()">Yellow</button>
-                    <span class="close">&times;</span>
-                </div>
-            </div>
     <div>
         <div class="container-Edit" style="border:solid">
             <div class="test2">
@@ -129,7 +111,6 @@
                     <h1>Case creater</h1>
                     <label>Stand name</label><br />
                     <select id="choseStands" name="choseStands">
-
                     </select><br />
                     <label>Chose Color</label><br />
                     <div class="ColorBox" id="NoColor" onclick="OpenModal()"></div><br />
