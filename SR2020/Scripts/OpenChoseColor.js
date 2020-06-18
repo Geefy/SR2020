@@ -10,11 +10,11 @@ function OpenColorModal() {
     colorModal.style.display = "block";
 }
 
-function OpenUpadteCaseModal() {
+function OpenUpadteCaseModal(caseId, standName) {
     upadteCaseModal.style.display = "block";
 }
 
-function OpenCloseCaseModal() {
+function OpenCloseCaseModal(caseId) {
     closeCaseModal.style.display = "block";
 }
 //Click the X to close modal

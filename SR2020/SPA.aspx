@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div class="CasesContainer">
+        <div class="CasesContainer" id="CaseContainterTest">
             <button class="collapsible">
                 <div class="ColorBox" id="Red"></div>
                 <div class="collapseableCaseName">
@@ -297,10 +297,10 @@
             </div>
         </div>
     </div>
-    <script src="Scripts/CaseCreation.js"></script>
-    <script src="Scripts/StylingsJavaScript.js"></script>
     <script src="Scripts/OpenChoseColor.js"></script>
     <script src="Scripts/ChoseColor.js"></script>
+    <script src="Scripts/CaseCreation.js"></script>
+    <script src="Scripts/StylingsJavaScript.js"></script>
     <script src="Scripts/Sorting.js"></script>
 </body>
 </html>

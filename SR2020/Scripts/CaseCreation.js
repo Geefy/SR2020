@@ -13,48 +13,118 @@ function append(parent, el) {
 
 function CreateContainer() {
     var div = document.createElement('div');
-    div.className = 'container';
-    div.id = 'ContainerEdit';
+    div.className = 'CasesContainer';
+    div.id = 'CaseContainterTest';
     document.getElementById("MainPage").appendChild(div);
 }
-CreateContainer();
+//CreateContainer();
 
 fetch(caseUrl)
     .then((resp) => resp.json())
     .then(function (data) {
         var cases = data;
         return cases.map(function (caseEL) {
-            var caseContainer = createNode('div');
-            colorBox = createNode('div'),
-                infoBox = createNode('div'),
-                infoText = createNode('p'),
-                standText = createNode('p');
+            var collapsible = createNode('button'),
+                caseholder = createNode('div'),
+                content = createNode('div'),
+                caseName = createNode('div'),
+                standNameholder = createNode('p'),
+                standName = createNode('p'),
+                timer = createNode('div'),
+                contactPerson = createNode('p'),
+                description = createNode('textarea'),
+                lastStatus = createNode('p'),
+                submit = createNode('button'),
+                update = createNode('button'),
+                colorBox = createNode('div');
 
-
-
+            content.className = 'content';
+            caseName.className = 'collapseableCaseName';
+            standNameholder.className = 'StandName';
+            standNameholder.innerHTML = 'Stander navn:';
+            standName.className = 'StandName';
+            standName.innerHTML = `${caseEL.standName}`;
+            timer.className = 'collapseableTimer';
+            description.className = 'collapseableCommentArea';
+            description.placeholder = 'Opgave beskrivelse';
+            description.readOnly = true;
+            lastStatus.className = 'lastStatus';
+            lastStatus.innerHTML = `${caseEL.lastUpdate}`;
+            submit.className = 'btn btn-success caseButton';
+            //submit.onclick = function () { OpenCloseCaseModal(`${caseEL.caseId}`); };
+            update.className = 'btn btn-primary caseButton';
+            //update.addEventListener("click", OpenUpadteCaseModal) = function () { OpenUpadteCaseModal(`${caseEL.caseId}`, `${caseEL.standName}`); };
+            var tempSpluit = SplitStringWithNoNumbers(standName.innerHTML);
             colorBox.className = 'ColorBox';
             colorBox.id = `${caseEL.colorCode}`;
-            infoBox.className = 'InfoBox';
-            infoBox.id = 'infoBoxTest';
-            infoText.className = 'InfoBoxText';
-            infoText.id = 'test';
-            infoText.innerHTML = `${caseEL.caseDescription}`;
-            standText.className = 'StandText';
-            standText.innerHTML = `${caseEL.standName}`;
-            var tempSpluit = SplitStringWithNoNumbers(standText.innerHTML);
-            caseContainer.className = 'CaseContainer ' + colorBox.id + ' ' + standText.innerHTML + ' ' + tempSpluit;
-            caseContainer.id = `${caseEL.caseId}`;
-            append(document.getElementById('ContainerEdit'), caseContainer);
-            append(document.getElementById(caseContainer.id), colorBox);
-            append(document.getElementById(caseContainer.id), infoBox);
-            append(infoBox, infoText);
-            append(document.getElementById(caseContainer.id), standText);
+            collapsible.className = 'collapsible ' + colorBox.id + ' ' + standName.innerHTML + ' ' + tempSpluit;;
+            collapsible.id = `${caseEL.caseId}`;
+
+            //Create Caseholder
+            append(document.getElementById('CaseContainterTest'), caseholder);
+
+            //Create Button
+            append(document.getElementById('CaseContainterTest'), collapsible);
+            append(collapsible, colorBox);
+            append(collapsible, caseName);
+            append(caseName, standNameholder);
+            append(caseName, standName);
+            append(collapsible, timer);
+
+            //Create Content
+            append(document.getElementById('CaseContainterTest'), content);
+            append(content, contactPerson);
+            append(content, description);
+            append(content, lastStatus);
+            append(content, submit);
+            append(content, update);
+
+
+
             LoadCases();
+            CaseClick();
         })
     })
     .catch(function (error) {
         console.log(error);
     })
+
+//fetch(caseUrl)
+//    .then((resp) => resp.json())
+//    .then(function (data) {
+//        var cases = data;
+//        return cases.map(function (caseEL) {
+//            var caseContainer = createNode('div');
+//            colorBox = createNode('div'),
+//                infoBox = createNode('div'),
+//                infoText = createNode('p'),
+//                standText = createNode('p');
+
+
+
+//            colorBox.className = 'ColorBox';
+//            colorBox.id = `${caseEL.colorCode}`;
+//            infoBox.className = 'InfoBox';
+//            infoBox.id = 'infoBoxTest';
+//            infoText.className = 'InfoBoxText';
+//            infoText.id = 'test';
+//            infoText.innerHTML = `${caseEL.caseDescription}`;
+//            standText.className = 'StandText';
+//            standText.innerHTML = `${caseEL.standName}`;
+//            var tempSpluit = SplitStringWithNoNumbers(standText.innerHTML);
+//            caseContainer.className = 'CaseContainer ' + colorBox.id + ' ' + standText.innerHTML + ' ' + tempSpluit;
+//            caseContainer.id = `${caseEL.caseId}`;
+//            append(document.getElementById('ContainerEdit'), caseContainer);
+//            append(document.getElementById(caseContainer.id), colorBox);
+//            append(document.getElementById(caseContainer.id), infoBox);
+//            append(infoBox, infoText);
+//            append(document.getElementById(caseContainer.id), standText);
+//            LoadCases();
+//        })
+//    })
+//    .catch(function (error) {
+//        console.log(error);
+//    })
 
 fetch(formGetUrl)
     .then((resp) => resp.json())
