@@ -38,9 +38,9 @@
                 <h3><i class="fa fa-bars" aria-hidden="true"></i></h3>
             </button>
             <div class="w3-dropdown-content w3-bar-block w3-border navbar-color" id="DropdownBox" style="right: 0">
-                <a class="w3-bar-item w3-button dropdownButton nav-link" data-target="CreateStandForm">Link 1</a>
-                <a class="w3-bar-item w3-button dropdownButton nav-link" data-target="CreateUserForm">Link 2</a>
-                <a class="w3-bar-item w3-button dropdownButton nav-link" data-target="CreateCaseForm">Link 3</a>
+                <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateStandForm">Link 1</a>
+                <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateUserForm">Link 2</a>
+                <a class="w3-bar-item w3-button dropdownButton nav-link " data-target="CreateCaseForm">Link 3</a>
             </div>
         </div>
     </div>

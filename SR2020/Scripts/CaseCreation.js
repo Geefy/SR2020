@@ -233,13 +233,14 @@ fetch(ult)
     {
         var tings = data.split(',');
 
-        if (tings[tings.length - 1] == "false") {
+
+        if (tings[tings.length - 1] == "False") {
 
 
-        var x = document.getElementsByClassName("adminAcess");
+            var x = document.querySelectorAll('.adminAccess');
 
             for (var i = 0; i < x.length; i++) {
-                x.style.display = "none";   
+                x[i].style.display = "none";   
         }
         }
 
