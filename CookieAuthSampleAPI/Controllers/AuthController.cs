@@ -44,7 +44,7 @@ namespace CookieAuthSampleAPI.Controllers
         /// </summary>
         /// <param name="userDetails"></param>
         /// <returns></returns>
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> Register([FromBody] UserDetails userDetails)
