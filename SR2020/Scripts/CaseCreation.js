@@ -32,13 +32,16 @@ fetch(caseUrl)
                 caseName = createNode('div'),
                 standNameholder = createNode('p'),
                 standName = createNode('p'),
+                fixedPetersProblem = createNode('p'),
                 timer = createNode('div'),
                 contactPerson = createNode('p'),
                 description = createNode('textarea'),
                 lastStatus = createNode('p'),
                 submit = createNode('button'),
                 update = createNode('button'),
-                colorBox = createNode('div');
+                colorBox = createNode('div'),
+                takeCaseBtn = createNode('button'),
+                personOnCase = createNode('p');
 
             caseName.className = 'collapseableCaseName';
             standNameholder.className = 'StandName';
@@ -54,7 +57,8 @@ fetch(caseUrl)
             submit.className = 'btn btn-success caseButton';
             submit.innerHTML = 'Afslut';
             submit.setAttribute("caseId", `${caseEL.caseId}`);
-
+            fixedPetersProblem.innerHTML = 'På sagen: ';
+            fixedPetersProblem.className = 'workerOnCase';
             submit.addEventListener("click", function () {
                 OpenCloseCaseModal(submit.getAttribute('caseId'));
             });
@@ -66,13 +70,23 @@ fetch(caseUrl)
             update.addEventListener("click", function () {
                 OpenUpadteCaseModal(update.getAttribute('caseId'), update.getAttribute('caseStandName'))
             });
+            personOnCase.innerHTML = UserOnCase(caseEL.userName);
+            personOnCase.className = 'workerOnCase';
+            takeCaseBtn.innerHTML = 'Tag opgave';
+            takeCaseBtn.className = 'btn btn-primary caseButton';
 
             var tempSpluit = SplitStringWithNoNumbers(standName.innerHTML);
             colorBox.className = 'ColorBox';
             colorBox.id = `${caseEL.colorCode}`;
-            content.className = 'content ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' +standName.innerHTML;
-            collapsible.className = 'collapsible ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' +standName.innerHTML;
+            content.className = 'content ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' + standName.innerHTML;
+            collapsible.className = 'collapsible ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' + standName.innerHTML;
             collapsible.id = `${caseEL.caseId}`;
+
+            isUserOnCase(personOnCase.innerHTML, takeCaseBtn);
+
+            takeCaseBtn.addEventListener("click", function () {
+                AddUserToCase(update.getAttribute('caseId'), update.getAttribute('caseStandName'), lastStatus.innerHTML, description.innerHTML, isOnCase(personOnCase.innerHTML), caseEL.colorCode, takeCaseBtn)
+            });
 
             //Create Caseholder
             append(document.getElementById('CaseContainterTest'), caseholder);
@@ -88,8 +102,11 @@ fetch(caseUrl)
             //Create Content
             append(document.getElementById('CaseContainterTest'), content);
             append(content, contactPerson);
-            append(content, description);
             append(content, lastStatus);
+            append(content, description);
+            append(content, fixedPetersProblem);
+            append(content, personOnCase);
+            append(content, takeCaseBtn);
             append(content, submit);
             append(content, update);
 
@@ -102,31 +119,59 @@ fetch(caseUrl)
         console.log(error);
     })
 
-function UpdateTimer()
-{
+
+
+
+function UserOnCase(_onCase) {
+    if (_onCase == null || _onCase == '')
+        return 'Ingen på sagen';
+    return _onCase;
+}
+
+function isUserOnCase(_oncase, _button) {
+    if (_oncase.includes(document.getElementById('hUser').value)) {
+        _button.style.display = 'none';
+    }
+}
+
+function isOnCase(_onCase) {
+    if (_onCase.includes(document.getElementById('hUser').value))
+        return _onCase;
+
+    if (_onCase.includes('Ingen på sagen'))
+        return document.getElementById('hUser').value;
+    return _onCase + " og " + document.getElementById('hUser').value;
+}
+
+function UpdateTimer() {
     var timers = Array.from(document.querySelectorAll('.lastStatus'));
     var lastupdate = timers[0].innerHTML;
     console.log(lastupdate);
 }
+var timers;
+var startTimer;
 
 var x = setInterval(function () {
-    var timers = Array.from(document.querySelectorAll('.lastStatus'));
-    var startTimer = Array.from(document.querySelectorAll('.collapseableTimer'));
+    if (timers == null) {
+
+        timers = Array.from(document.querySelectorAll('.lastStatus'));
+        startTimer = Array.from(document.querySelectorAll('.collapseableTimer'));
+    }
 
     for (var i = 0; i < timers.length; i++) {
 
-    // Get today's date and time
-    var now = new Date().getTime();
+        // Get today's date and time
+        var now = new Date().getTime();
 
         var countDownDate = new Date(timers[i].innerHTML).getTime();
         countDownDate += 2 * 3600 * 1000;
         // Find the distance between now and the count down date
         var distance = countDownDate - now;
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Output the result in an element with id="demo"
         //2020-6-16 15:32:45
@@ -209,10 +254,11 @@ function doalert(checkboxElem) {
 
         var x = document.querySelectorAll('.collapsible');
 
+
         for (var i = 0; i < x.length; i++) {
             CaseClick(x[i].case);
         }
-            
+
     }
 }
 
