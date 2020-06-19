@@ -16,7 +16,7 @@ namespace SR2020
                 Token.Value = Session["Token"].ToString();
                 hUser.Value = Session["User"].ToString();
             }
-            catch (Exception)
+            catch (Exception ee)
             {
                 CheckSession();
             }
