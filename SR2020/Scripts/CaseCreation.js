@@ -51,9 +51,20 @@ fetch(caseUrl)
             lastStatus.className = 'lastStatus';
             lastStatus.innerHTML = `${caseEL.lastUpdate}`;
             submit.className = 'btn btn-success caseButton';
-            //submit.onclick = function () { OpenCloseCaseModal(`${caseEL.caseId}`); };
+            submit.setAttribute("caseId", `${caseEL.caseId}`);
+
+            submit.addEventListener("click", function () {
+                OpenCloseCaseModal(submit.getAttribute('caseId'));
+            });
+
             update.className = 'btn btn-primary caseButton';
-            //update.addEventListener("click", OpenUpadteCaseModal) = function () { OpenUpadteCaseModal(`${caseEL.caseId}`, `${caseEL.standName}`); };
+            update.setAttribute("caseStandName", `${caseEL.standName}`);
+            update.setAttribute("caseId", `${caseEL.caseId}`);
+
+            update.addEventListener("click", function () {
+                OpenUpadteCaseModal(update.getAttribute('caseId'), update.getAttribute('caseStandName'))
+            });
+
             var tempSpluit = SplitStringWithNoNumbers(standName.innerHTML);
             colorBox.className = 'ColorBox';
             colorBox.id = `${caseEL.colorCode}`;
@@ -88,43 +99,6 @@ fetch(caseUrl)
     .catch(function (error) {
         console.log(error);
     })
-
-//fetch(caseUrl)
-//    .then((resp) => resp.json())
-//    .then(function (data) {
-//        var cases = data;
-//        return cases.map(function (caseEL) {
-//            var caseContainer = createNode('div');
-//            colorBox = createNode('div'),
-//                infoBox = createNode('div'),
-//                infoText = createNode('p'),
-//                standText = createNode('p');
-
-
-
-//            colorBox.className = 'ColorBox';
-//            colorBox.id = `${caseEL.colorCode}`;
-//            infoBox.className = 'InfoBox';
-//            infoBox.id = 'infoBoxTest';
-//            infoText.className = 'InfoBoxText';
-//            infoText.id = 'test';
-//            infoText.innerHTML = `${caseEL.caseDescription}`;
-//            standText.className = 'StandText';
-//            standText.innerHTML = `${caseEL.standName}`;
-//            var tempSpluit = SplitStringWithNoNumbers(standText.innerHTML);
-//            caseContainer.className = 'CaseContainer ' + colorBox.id + ' ' + standText.innerHTML + ' ' + tempSpluit;
-//            caseContainer.id = `${caseEL.caseId}`;
-//            append(document.getElementById('ContainerEdit'), caseContainer);
-//            append(document.getElementById(caseContainer.id), colorBox);
-//            append(document.getElementById(caseContainer.id), infoBox);
-//            append(infoBox, infoText);
-//            append(document.getElementById(caseContainer.id), standText);
-//            LoadCases();
-//        })
-//    })
-//    .catch(function (error) {
-//        console.log(error);
-//    })
 
 fetch(formGetUrl)
     .then((resp) => resp.json())

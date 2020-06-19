@@ -27,7 +27,7 @@
     <!--<nav class="navbar navbar-inverse">-->
     <form runat="server" style="visibility: hidden">
         <asp:HiddenField runat="server" ID="Token" Value="" />
-         <asp:HiddenField ID="hUser" Value="" runat="server" />
+         <asp:HiddenField ID="hUser" Value="" runat="server" ClientIDMode="Static" />
     </form>
     <div class="w3-bar">
         <a class="w3-bar-item w3-button" id="LogoArea">
@@ -39,7 +39,7 @@
             </button>
             <div class="w3-dropdown-content w3-bar-block w3-border navbar-color" id="DropdownBox" style="right: 0">
                 <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateStandForm">Link 1</a>
-                <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateUserForm">Link 2</a>
+                <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateUserForm" >Link 2</a>
                 <a class="w3-bar-item w3-button dropdownButton nav-link " data-target="CreateCaseForm">Link 3</a>
             </div>
         </div>
@@ -272,7 +272,7 @@
                                 <label>Case beskrivelse:</label><br />
                                 <textarea id="updateDescription" class="form-control" placeholder="Beskrivelse"></textarea>
                             </div>
-
+                            <%--dasdsa--%>
                             <button onclick="UpdateCase()" class="btn btn-success CreateFormSpacingButton">Opdater</button>
                         </form>
                     </div>
@@ -291,8 +291,8 @@
                             <label>Beskrivelse:</label><br />
                             <textarea id="description" class="form-control" placeholder="Beskrivelse"></textarea>
                         </div>
-
-                        <button onclick="CreateCase()" class="btn btn-success CreateFormSpacingButton">Udfør</button>
+                        <%--dadasd--%>
+                        <button onclick="CloseCase()" class="btn btn-success CreateFormSpacingButton">Udfør</button>
                     </form>
                 </div>
             </div>
@@ -303,5 +303,6 @@
     <script src="Scripts/CaseCreation.js"></script>
     <script src="Scripts/StylingsJavaScript.js"></script>
     <script src="Scripts/Sorting.js"></script>
+    <script type="text/javascript" src="Scripts/CaseEvent.js"></script>
 </body>
 </html>

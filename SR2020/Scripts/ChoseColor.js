@@ -6,7 +6,6 @@ function Red() {
 }
 function ModalRed() {
     ModalColorBox.id = "Red";
-    modal.style.display = "none";
 }
 function Blue() {
 
@@ -16,7 +15,6 @@ function Blue() {
 function ModalBlue() {
 
     ModalColorBox.id = "Blue";
-    modal.style.display = "none";
 }
 function Yellow() {
     ColorBox.id = "Yellow";
@@ -24,7 +22,6 @@ function Yellow() {
 }
 function ModalYellow() {
     ModalColorBox.id = "Yellow";
-    modal.style.display = "none";
 }
 function Green() {
     ColorBox.id = "Green";
@@ -32,5 +29,4 @@ function Green() {
 }
 function ModalGreen() {
     ModalColorBox.id = "Green";
-    modal.style.display = "none";
 }
