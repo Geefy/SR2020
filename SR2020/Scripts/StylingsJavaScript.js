@@ -2,7 +2,6 @@
 function CaseClick(collapsiple) {
 
     collapsiple.addEventListener("click", function () {
-        this.classList.toggle("active");
         var content = this.nextElementSibling;
         if (content.style.maxHeight) {
             content.style.maxHeight = null;

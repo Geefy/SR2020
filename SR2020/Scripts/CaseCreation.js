@@ -70,8 +70,8 @@ fetch(caseUrl)
             var tempSpluit = SplitStringWithNoNumbers(standName.innerHTML);
             colorBox.className = 'ColorBox';
             colorBox.id = `${caseEL.colorCode}`;
-            content.className = 'content ' + colorBox.id + ' ' + standName.innerHTML + ' colorSort ' + tempSpluit;
-            collapsible.className = 'collapsible ' + colorBox.id + ' ' + standName.innerHTML + ' colorSort ' + tempSpluit;
+            content.className = 'content ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' +standName.innerHTML;
+            collapsible.className = 'collapsible ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' +standName.innerHTML;
             collapsible.id = `${caseEL.caseId}`;
 
             //Create Caseholder
