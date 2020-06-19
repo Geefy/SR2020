@@ -3,6 +3,8 @@ const formGetUrl = 'http://192.168.137.235/api/stand';
 const userUrl = '';
 
 var startSort = [];
+var startDiv = [];
+var moveDiv = [];
 function createNode(element) {
     return document.createElement(element);
 }
@@ -38,7 +40,6 @@ fetch(caseUrl)
                 update = createNode('button'),
                 colorBox = createNode('div');
 
-            content.className = 'content';
             caseName.className = 'collapseableCaseName';
             standNameholder.className = 'StandName';
             standNameholder.innerHTML = 'Stander navn:';
@@ -46,11 +47,12 @@ fetch(caseUrl)
             standName.innerHTML = `${caseEL.standName}`;
             timer.className = 'collapseableTimer';
             description.className = 'collapseableCommentArea';
-            description.placeholder = 'Opgave beskrivelse';
+            description.innerHTML = `${caseEL.caseDescription}`
             description.readOnly = true;
             lastStatus.className = 'lastStatus';
             lastStatus.innerHTML = `${caseEL.lastUpdate}`;
             submit.className = 'btn btn-success caseButton';
+            submit.innerHTML = 'Afslut';
             submit.setAttribute("caseId", `${caseEL.caseId}`);
 
             submit.addEventListener("click", function () {
@@ -60,7 +62,7 @@ fetch(caseUrl)
             update.className = 'btn btn-primary caseButton';
             update.setAttribute("caseStandName", `${caseEL.standName}`);
             update.setAttribute("caseId", `${caseEL.caseId}`);
-
+            update.innerHTML = 'Opdater';
             update.addEventListener("click", function () {
                 OpenUpadteCaseModal(update.getAttribute('caseId'), update.getAttribute('caseStandName'))
             });
@@ -68,7 +70,8 @@ fetch(caseUrl)
             var tempSpluit = SplitStringWithNoNumbers(standName.innerHTML);
             colorBox.className = 'ColorBox';
             colorBox.id = `${caseEL.colorCode}`;
-            collapsible.className = 'collapsible ' + colorBox.id + ' ' + standName.innerHTML + ' ' + tempSpluit;;
+            content.className = 'content ' + colorBox.id + ' ' + standName.innerHTML + ' colorSort ' + tempSpluit;
+            collapsible.className = 'collapsible ' + colorBox.id + ' ' + standName.innerHTML + ' colorSort ' + tempSpluit;
             collapsible.id = `${caseEL.caseId}`;
 
             //Create Caseholder
@@ -91,14 +94,47 @@ fetch(caseUrl)
             append(content, update);
 
 
-
             LoadCases();
-            CaseClick();
+            CaseClick(collapsible);
         })
     })
     .catch(function (error) {
         console.log(error);
     })
+
+function UpdateTimer()
+{
+    var timers = Array.from(document.querySelectorAll('.lastStatus'));
+    var lastupdate = timers[0].innerHTML;
+    console.log(lastupdate);
+}
+
+var x = setInterval(function () {
+    var timers = Array.from(document.querySelectorAll('.lastStatus'));
+    var startTimer = Array.from(document.querySelectorAll('.collapseableTimer'));
+
+    for (var i = 0; i < timers.length; i++) {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+        var countDownDate = new Date(timers[i].innerHTML).getTime();
+        countDownDate += 2 * 3600 * 1000;
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        //2020-6-16 15:32:45
+        startTimer[i].innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+        //timers[i].innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+    }
+}, 1000);
+
 
 fetch(formGetUrl)
     .then((resp) => resp.json())
@@ -117,8 +153,11 @@ fetch(formGetUrl)
 
 function LoadCases() {
     allCheckboxes = document.querySelectorAll('input[type=checkbox]');
-    allCases = Array.from(document.querySelectorAll('.CaseContainer'));
+    allCases = Array.from(document.querySelectorAll('.collapsible'));
+    colorSort = Array.from(document.querySelectorAll('.colorSort'));
     startSort = allCases;
+    startDiv = Array.from(document.querySelectorAll('.content'));
+    moveDiv = startDiv;
     getChecked('ColorId');
     getChecked('alphabeticalOrder');
     getChecked('alphabetical');
@@ -130,6 +169,7 @@ function LoadCases() {
 
 var allCheckboxes;
 var allCases;
+var colorSort;
 var checked = {};
 
 
@@ -142,14 +182,14 @@ function toggleCheckbox(e) {
 }
 
 function doalert(checkboxElem) {
-    const boddy = document.getElementById('ContainerEdit');
+    const boddy = document.getElementById('CaseContainterTest');
     boddy.innerHTML = '';
 
     if (checkboxElem.checked) {
 
         var temp = [];
         for (var i = 0; i < allCases.length; i++) {
-            var tempObj = { case: allCases[i], string: SplitString(allCases[i].className) };
+            var tempObj = { case: allCases[i], string: SplitString(allCases[i].className), divStart: moveDiv[i] };
             temp.push(tempObj);
         }
 
@@ -157,12 +197,22 @@ function doalert(checkboxElem) {
 
         for (var i = 0; i < temp.length; i++) {
             append(boddy, temp[i].case);
+            append(boddy, temp[i].divStart);
+            CaseClick(temp[i].case);
         }
 
     } else {
-        for (var i = 0; i < allCases.length; i++) {
+        for (var i = 0; i < startSort.length; i++) {
             append(boddy, startSort[i]);
+            append(boddy, startDiv[i]);
         }
+
+        var x = document.querySelectorAll('.collapsible');
+
+        for (var i = 0; i < x.length; i++) {
+            CaseClick(x[i].case);
+        }
+            
     }
 }
 
@@ -170,12 +220,12 @@ function getChecked(name) {
     checked[name] = Array.from(document.querySelectorAll('input[name=' + name + ']:checked')).map(function (el) {
         if (name == 'alphabeticalOrder') {
 
-            const boddy = document.getElementById('ContainerEdit');
+            const boddy = document.getElementById('CaseContainterTest');
             boddy.innerHTML = '';
 
             var temp = [];
             for (var i = 0; i < allCases.length; i++) {
-                var tempObj = { case: allCases[i], string: SplitString(allCases[i].className) };
+                var tempObj = { case: allCases[i], string: SplitString(allCases[i].className), divStart: moveDiv[i] };
 
 
                 temp.push(tempObj);
@@ -185,6 +235,8 @@ function getChecked(name) {
 
             for (var i = 0; i < temp.length; i++) {
                 append(boddy, temp[i].case);
+                append(boddy, temp[i].divStart);
+                CaseClick(temp[i].case);
             }
 
 
@@ -227,7 +279,7 @@ function SplitStringWithNoNumbers(toSplit) {
 }
 
 function setVisibility() {
-    allCases.map(function (el) {
+    colorSort.map(function (el) {
         var ColorId = checked.ColorId.length ? _.intersection(Array.from(el.classList), checked.ColorId).length : true;
         var alphabetical = checked.alphabetical.length ? _.intersection(Array.from(el.classList), checked.alphabetical).length : true;
         if (ColorId && alphabetical) {
@@ -273,8 +325,7 @@ function CreateCase() {
 var ult = 'https://localhost:44350/api/auth/GetUser?userName=' + document.getElementById('hUser').value;
 fetch(ult)
     .then((resp) => resp.text())
-    .then(function (data)
-    {
+    .then(function (data) {
         var tings = data.split(',');
 
 
@@ -284,8 +335,8 @@ fetch(ult)
             var x = document.querySelectorAll('.adminAccess');
 
             for (var i = 0; i < x.length; i++) {
-                x[i].style.display = "none";   
-        }
+                x[i].style.display = "none";
+            }
         }
 
     })
