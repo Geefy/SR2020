@@ -131,18 +131,20 @@
                     </div>
 
                     <div class="CreateFormSpacing">
-                        <label>Telefonnummer:</label><br />
+                        <label >Telefonnummer:</label><br />
                         <input id="UserPhone" placeholder="Telefonnummer" class="form-control" />
                     </div>
 
                     <div class="CreateFormSpacing">
                         <label>Vælg Rolle:</label><br />
                         <select id="UserRole" name="UserRole" class="form-control">
+                            <option value="0">Tekniker</option>
+                            <option value="1">Administrator</option>
                         </select>
                     </div>
 
 
-                    <button onclick="return PostStand()" class="btn btn-success CreateFormSpacingButton">Opret</button>
+                    <button onclick="return CreateUser()" class="btn btn-success CreateFormSpacingButton">Opret</button>
                 </form>
             </div>
         </div>

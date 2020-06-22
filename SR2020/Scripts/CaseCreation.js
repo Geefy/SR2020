@@ -1,6 +1,6 @@
 ﻿const caseUrl = 'http://192.168.137.235/api/cases';
 const formGetUrl = 'http://192.168.137.235/api/stand';
-const userUrl = '';
+const userUrl = 'https://localhost:44350/api/auth/register';
 
 var startSort = [];
 var startDiv = [];
@@ -70,8 +70,8 @@ fetch(caseUrl)
             var tempSpluit = SplitStringWithNoNumbers(standName.innerHTML);
             colorBox.className = 'ColorBox';
             colorBox.id = `${caseEL.colorCode}`;
-            content.className = 'content ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' +standName.innerHTML;
-            collapsible.className = 'collapsible ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' +standName.innerHTML;
+            content.className = 'content ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' + standName.innerHTML;
+            collapsible.className = 'collapsible ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' + standName.innerHTML;
             collapsible.id = `${caseEL.caseId}`;
 
             //Create Caseholder
@@ -102,8 +102,7 @@ fetch(caseUrl)
         console.log(error);
     })
 
-function UpdateTimer()
-{
+function UpdateTimer() {
     var timers = Array.from(document.querySelectorAll('.lastStatus'));
     var lastupdate = timers[0].innerHTML;
     console.log(lastupdate);
@@ -115,18 +114,18 @@ var x = setInterval(function () {
 
     for (var i = 0; i < timers.length; i++) {
 
-    // Get today's date and time
-    var now = new Date().getTime();
+        // Get today's date and time
+        var now = new Date().getTime();
 
         var countDownDate = new Date(timers[i].innerHTML).getTime();
         countDownDate += 2 * 3600 * 1000;
         // Find the distance between now and the count down date
         var distance = countDownDate - now;
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Output the result in an element with id="demo"
         //2020-6-16 15:32:45
@@ -212,7 +211,7 @@ function doalert(checkboxElem) {
         for (var i = 0; i < x.length; i++) {
             CaseClick(x[i].case);
         }
-            
+
     }
 }
 
@@ -346,25 +345,45 @@ fetch(ult)
 
 
 
+var username = document.getElementById('UserName');
+var password = document.getElementById('UserPassword');
+var fname = document.getElementById('Fname');
+var lname = document.getElementById('Lname');
+var email = document.getElementById('UserEmail');
+var phone = document.getElementById('UserPhone');
+var isadmin = document.getElementById('UserRole');
+
+
 
 function CreateUser() {
-    var time = GetTimeNow();
-    (async () => {
-        const rawResponse = await fetch(userUrl, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                standName: stander.value,
-                colorCode: SubmitColor.id,
-                lastUpdate: time,
-                caseDescription: description.value
-            })
-        });
-        console.log(time);
-        const content = await rawResponse.json();
-    })();
+    var roleValue = isadmin.options[isadmin.selectedIndex].value;
+    if (roleValue == 1)
+        roleValue = true;
+    else
+        roleValue = false; 
+    try {
+
+        (async () => {
+            const rawResponse = await fetch('https://localhost:44350/api/auth/register', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    UserName: username.value,
+                    Password: password.value,
+                    FName: fname.value,
+                    LName: lname.value,
+                    Email: email.value,
+                    PhoneNumber: phone.value,
+                    IsAdmin: roleValue
+                })
+            });
+            const content = await rawResponse.json();
+        })();
+    } catch (e) {
+
+    }
 
 }
