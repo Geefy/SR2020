@@ -23,6 +23,16 @@ namespace SR2020
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                Session["Token"] = null;
+                Session["User"] = null;
+
+            }
+            catch (Exception)
+            {
+
+            }
             //LoginButton.Text = "To SPA";
         }
 
@@ -33,7 +43,7 @@ namespace SR2020
                 using (var client = new System.Net.Http.HttpClient())
                 {
 
-                    client.BaseAddress = new Uri("https://localhost:44350/");
+                    client.BaseAddress = new Uri("http://192.168.137.235:44350/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     var userLogin = new UserCredentials() { Username = Uname.Value, Password = Pword.Value };

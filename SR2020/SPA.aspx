@@ -11,14 +11,10 @@
     <link type="text/css" href="Stylesheets/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)" />
     <link type="text/css" href="bootstrap.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script type="text/javascript" src="Scripts/TokenScript.js"></script>
     <script type="text/javascript" src="Scripts/ApiCall.js"></script>
-    <script type="text/javascript" src="Scripts/TimerTest.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
     <script type="text/javascript" src="Scripts/spa.js"></script>
-    <script type="text/javascript" src="Scripts/JSCase.js"></script>
     <script type="text/javascript" src="Scripts/bootstrap.js"></script>
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
 </head>
@@ -41,6 +37,7 @@
                 <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateStandForm">Opret Stadeplads</a>
                 <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateUserForm">Opret Bruger</a>
                 <a class="w3-bar-item w3-button dropdownButton nav-link " data-target="CreateCaseForm">Opret Case</a>
+                <a class="w3-bar-item w3-button dropdownButton " onclick="Logout()">Log Ud</a>
             </div>
         </div>
     </div>
@@ -242,7 +239,6 @@
     <script src="Scripts/ChoseColor.js"></script>
     <script src="Scripts/CaseCreation.js"></script>
     <script src="Scripts/StylingsJavaScript.js"></script>
-    <script src="Scripts/Sorting.js"></script>
     <script type="text/javascript" src="Scripts/CaseEvent.js"></script>
 </body>
 </html>

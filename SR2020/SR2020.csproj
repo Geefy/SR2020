@@ -120,16 +120,11 @@
     <Content Include="Scripts\CaseEvent.js" />
     <Content Include="Scripts\ChoseColor.js" />
     <Content Include="Scripts\OpenChoseColor.js" />
-    <Content Include="Scripts\Sorting.js" />
-    <Content Include="Scripts\TimerTest.js" />
-    <Content Include="Scripts\Test.js" />
-    <Content Include="Scripts\TokenScript.js" />
     <Content Include="Scripts\StylingsJavaScript.js" />
     <Content Include="SPA.aspx" />
     <Content Include="Scripts\ApiCall.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\CaseCreation.js" />
-    <Content Include="Scripts\JSCase.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\spa.js" />
     <Content Include="Stylesheets\MobileStyles.css" />

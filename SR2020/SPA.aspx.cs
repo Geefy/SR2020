@@ -29,11 +29,5 @@ namespace SR2020
                 Response.Redirect("Index.aspx");
             }
         }
-        protected void Logout(object sender, EventArgs e)
-        {
-            Session["Token"] = null;
-            Token.Value = null;
-            CheckSession();
-        }
     }
 }

@@ -11,8 +11,6 @@
     <link type="text/css" href="Stylesheets/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)" />
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <script src="Scripts/TokenScript.js"></script>
-    <script src="Scripts/Test.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">

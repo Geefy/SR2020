@@ -1,6 +1,6 @@
 ﻿const caseUrl = 'http://192.168.137.235/api/cases';
 const formGetUrl = 'http://192.168.137.235/api/stand';
-const userUrl = 'https://localhost:44350/api/auth/register';
+const userUrl = 'http://192.168.137.235:44350/api/auth/register';
 
 var startSort = [];
 var startDiv = [];
@@ -368,7 +368,7 @@ function CreateCase() {
     })();
 
 }
-var ult = 'https://localhost:44350/api/auth/GetUser?userName=' + document.getElementById('hUser').value;
+var ult = 'http://192.168.137.235:44350/api/auth/GetUser?userName=' + document.getElementById('hUser').value;
 fetch(ult)
     .then((resp) => resp.text())
     .then(function (data) {
@@ -411,7 +411,7 @@ function CreateUser() {
     try {
 
         (async () => {
-            const rawResponse = await fetch('https://localhost:44350/api/auth/register', {
+            const rawResponse = await fetch('http://192.168.137.235:44350/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -433,4 +433,9 @@ function CreateUser() {
 
     }
 
+}
+
+function Logout() {
+
+    window.location.href = "index.aspx";
 }
