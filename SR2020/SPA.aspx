@@ -69,7 +69,69 @@
                 </div>
             </div>
         </div>
-        <div class="CasesContainer" id="CaseContainterTest">
+        <div class="CasesContainer">
+            <button class="collapsible">
+                <div class="ColorBox" id="Red"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
+            <div class="content">
+                <p>Kunde navn: Netto</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="lastStatus">Sidste status: 14:58</p>
+                <button class="btn btn-primary caseButton" onclick="OpenUpadteCaseModal()">OPDATER</button>
+                <button class="btn btn-success caseButton" onclick="OpenCloseCaseModal()">AFSLUT</button>
+            </div>
+            <button class="collapsible">
+                <div class="ColorBox" id="Green"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
+            <div class="content">
+                <p>Kunde navn: GLAS MADS</p>
+                <p>Tlf:+45 8765 4321</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="workerOnCase">På casen: Claus</p>
+                <button class="btn btn-primary caseButton">OPDATER</button>
+                <button class="btn btn-success caseButton">AFSLUT</button>
+            </div>
+            <button class="collapsible">
+                <div class="ColorBox" id="Yellow"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
+            <div class="content">
+                <p>Kunde navn: LIDL</p>
+                <p>Tlf:+45 2588 5246</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="workerOnCase">På casen: Lars</p>
+                <button class="btn btn-primary caseButton">OPDATER</button>
+                <button class="btn btn-success caseButton">AFSLUT</button>
+            </div>
+            <button class="collapsible">
+                <div class="ColorBox" id="Blue"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
+            <div class="content">
+                <p>Kunde navn: Netto</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="lastStatus">Sidste status: 14:58</p>
+                <button class="btn btn-primary caseButton">OPDATER</button>
+                <button class="btn btn-success caseButton">AFSLUT</button>
+            </div>
         </div>
     </div>
     <div class="page" id="CreateStandForm">
@@ -227,6 +289,7 @@
                         <div class="CreateFormSpacing">
                             <label>Beskrivelse:</label><br />
                             <textarea id="description" class="form-control" placeholder="Beskrivelse"></textarea>
+                            <button onclick="CreateCase()" class="btn btn-success CreateFormSpacingButton">UDFØR</button>
                         </div>
                         <%--dadasd--%>
                         <button onclick="CloseCase()" class="btn btn-success CreateFormSpacingButton">Udfør</button>
