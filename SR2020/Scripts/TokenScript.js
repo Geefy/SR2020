@@ -22,22 +22,3 @@ var currentExpiration;
 //        console.log(error);
 //    })
 
-
-var TokenTimer = setInterval(function () {
-    var TimeLeft = new Date(currentExpiration).getTime();
-    var now = new Date().getTime();
-    var timeleft = TimeLeft - now;
-
-    // Time calculations for days, hours, minutes and seconds
-    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-    // Output the result in an element with id="demo"
-    document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
-
-    // If the count down is over, write some text 
-    if (timeleft < 0) {
-        clearInterval(TokenTimer);
-        document.getElementById("timer").innerHTML = "EXPIRED";
-    }
-}, 1000);

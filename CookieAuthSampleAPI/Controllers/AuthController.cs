@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Diagnostics;
+using Newtonsoft.Json.Linq;
 
 namespace CookieAuthSampleAPI.Controllers
 {
@@ -46,43 +47,62 @@ namespace CookieAuthSampleAPI.Controllers
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         [Route("Register")]
-        public async Task<IActionResult> Register([FromBody] UserDetails userDetails)
+        public async Task<IActionResult> Register([FromBody] object userDetails)
         {
-            //Checks for valid Modelstate???
-            if (!ModelState.IsValid || userDetails == null)
+            try
             {
-                return new BadRequestObjectResult(new { Message = "User Registration Failed" });
-            }
-
-            //Insert more stuff like initials if needed
-            AppUser identityUser = new AppUser()
-            {
-                UserName = userDetails.Username,
-                Email = userDetails.Email,
-                FName = "Bob",
-                LName = "Larsen",
-                IsAdmin = false
-            };
-
-            //userDetails.Password is hashed at this point
-            IdentityResult result = await userManager.CreateAsync(identityUser, userDetails.Password);
-
-            if (!result.Succeeded)
-            {
-                ModelStateDictionary dictionary = new ModelStateDictionary();
-
-                foreach (IdentityError error in result.Errors)
+                //Checks for valid Modelstate???
+                if (!ModelState.IsValid || userDetails == null)
                 {
-                    dictionary.AddModelError(error.Code, error.Description);
+                    return new BadRequestObjectResult(new { Message = "User Registration Failed" });
                 }
 
-                return new BadRequestObjectResult(new
+                string dataHolder = userDetails.ToString();
+
+                UserDetails uDetails =  JsonConvert.DeserializeObject<UserDetails>(dataHolder);
+
+
+                //Insert more stuff like initials if needed
+                AppUser identityUser = new AppUser()
                 {
-                    Message = "User Registration Failed",
-                    Errors = dictionary
-                });
+
+
+                    UserName = uDetails.Username,
+                    FName = uDetails.FName,
+                    LName = uDetails.LName,
+                    Email = uDetails.Email,
+                    PhoneNumber = uDetails.PhoneNumber,
+                    IsAdmin = uDetails.IsAdmin
+                };
+
+                //userDetails.Password is hashed at this point
+                IdentityResult result = await userManager.CreateAsync(identityUser, uDetails.Password);
+
+                if (!result.Succeeded)
+                {
+
+                    //fix
+                    ModelStateDictionary dictionary = new ModelStateDictionary();
+
+                    foreach (IdentityError error in result.Errors)
+                    {
+                        dictionary.AddModelError(error.Code, error.Description);
+                    }
+
+                    return new BadRequestObjectResult(new
+                    {
+                        Message = "User Registration Failed",
+                        Errors = dictionary
+                    });
+                }
+
+                return Ok(new { Message = "User Reigstration Successful" });
             }
-            return Ok(new { Message = "User Reigstration Successful" });
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return BadRequest();
+            }
         }
 
         [HttpPost]
@@ -97,9 +117,9 @@ namespace CookieAuthSampleAPI.Controllers
                 Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(appUser, loginCredentials.Password, false, false);
                 if (result.Succeeded)
                 {
+                    string temp = "|" + appUser.FName + "," + appUser.LName + "," + appUser.IsAdmin;
 
-
-                    return Created("", CreateToken(loginCredentials));
+                    return Created("", CreateToken(loginCredentials) + temp);
                 }
                 else
                 {
@@ -107,6 +127,19 @@ namespace CookieAuthSampleAPI.Controllers
                 }
             }
             return null;
+        }
+
+        [HttpGet]
+        [Route("GetUser")]
+        public async Task<string> GetUser(string userName)
+        {
+            AppUser appUser = await userManager.FindByNameAsync(userName);
+
+            if (appUser != null)
+            {
+                return appUser.ToString();
+            }
+            return "User not found";
         }
 
         //[HttpGet]

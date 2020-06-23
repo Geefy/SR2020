@@ -117,6 +117,7 @@
     <Content Include="Global.asax" />
     <Content Include="Bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Images\SRO-header-logo-vektor.svg" />
+    <Content Include="Scripts\CaseEvent.js" />
     <Content Include="Scripts\ChoseColor.js" />
     <Content Include="Scripts\OpenChoseColor.js" />
     <Content Include="Scripts\Sorting.js" />

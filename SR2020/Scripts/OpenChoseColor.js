@@ -6,15 +6,19 @@ var span = document.getElementsByClassName("close")[0];
 var updateSpan = document.getElementsByClassName("close")[1];
 var closeSpan = document.getElementsByClassName("close")[2];
 //click on div to open modal
+
+
 function OpenColorModal() {
     colorModal.style.display = "block";
 }
 
-function OpenUpadteCaseModal() {
+function OpenUpadteCaseModal(caseId, standName) {
+    GetTempVar(caseId, standName);
     upadteCaseModal.style.display = "block";
 }
 
-function OpenCloseCaseModal() {
+function OpenCloseCaseModal(caseId) {
+    GetTempVar(caseId, '');
     closeCaseModal.style.display = "block";
 }
 //Click the X to close modal

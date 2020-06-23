@@ -15,6 +15,7 @@ namespace CookieAuthSampleAPI.Models
 
         public string FName { get; set; }
         public string LName { get; set; }
+        public bool IsAdmin { get; set; }
 
         //private string initials;
 
@@ -24,6 +25,10 @@ namespace CookieAuthSampleAPI.Models
         //    get { return initials = firstName.First() + lastName.First().ToString(); }
         //}
 
-        public bool IsAdmin { get; set; }
+
+        public override string ToString()
+        {
+            return FName + "," + LName + "," + IsAdmin;
+        }
     }
 }
