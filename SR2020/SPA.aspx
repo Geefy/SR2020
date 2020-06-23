@@ -87,21 +87,23 @@
                 <button class="btn btn-primary caseButton" onclick="OpenUpadteCaseModal()">OPDATER</button>
                 <button class="btn btn-success caseButton" onclick="OpenCloseCaseModal()">AFSLUT</button>
             </div>
-            <button class="collapsible">
-                <div class="ColorBox" id="Green"></div>
-                <div class="collapseableCaseName">
-                    <p class="StandName">Stander navn:</p>
-                    <p class="StandName">L85A-DK</p>
+            <div>
+                <button class="collapsible">
+                    <div class="ColorBox" id="Green"></div>
+                    <div class="collapseableCaseName">
+                        <p class="StandName">Stander navn:</p>
+                        <p class="StandName">L85A-DK</p>
+                    </div>
+                    <div class="collapseableTimer">02:00:00</div>
+                </button>
+                <div class="content">
+                    <p>Kunde navn: GLAS MADS</p>
+                    <p>Tlf:+45 8765 4321</p>
+                    <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                    <p class="workerOnCase">På casen: Claus</p>
+                    <button class="btn btn-primary caseButton">OPDATER</button>
+                    <button class="btn btn-success caseButton">AFSLUT</button>
                 </div>
-                <div class="collapseableTimer">02:00:00</div>
-            </button>
-            <div class="content">
-                <p>Kunde navn: GLAS MADS</p>
-                <p>Tlf:+45 8765 4321</p>
-                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
-                <p class="workerOnCase">På casen: Claus</p>
-                <button class="btn btn-primary caseButton">OPDATER</button>
-                <button class="btn btn-success caseButton">AFSLUT</button>
             </div>
             <button class="collapsible">
                 <div class="ColorBox" id="Yellow"></div>
@@ -258,21 +260,25 @@
                         <form class="CreaterForm">
                             <div class="CreateFormSpacing">
                                 <label>Vælg farve:</label><br />
-                                <div class="ColorBox ModalColorBox" id="Red" onclick="ModalRed()"></div>
-                                <div class="ColorBox ModalColorBox" id="Yellow" onclick="ModalYellow()"></div>
-                                <div class="ColorBox ModalColorBox" id="Green" onclick="ModalGreen()"></div>
-                                <div class="ColorBox ModalColorBox" id="Blue" onclick="ModalBlue()"></div>
-                                <div class="ColorBox form-control" id="NoColorModal"></div>
+                                <div id="ModalColorBoxContainer">
+                                    <div class="ColorBox ModalColorBox" id="Red" onclick="ModalRed()"></div>
+                                    <div class="ColorBox ModalColorBox" id="Yellow" onclick="ModalYellow()"></div>
+                                    <div class="ColorBox ModalColorBox" id="Green" onclick="ModalGreen()"></div>
+                                    <div class="ColorBox ModalColorBox" id="Blue" onclick="ModalBlue()"></div>
+                                </div>
+                                <div class="ColorBox form-control ModalFormControl" id="NoColorModal"></div>
                                 <br />
                                 <br />
                             </div>
 
                             <div class="CreateFormSpacing">
                                 <label>Case beskrivelse:</label><br />
-                                <textarea id="updateDescription" class="form-control" placeholder="Beskrivelse"></textarea>
+                                <textarea id="updateDescription" class="form-control" placeholder="Beskrivelse"></textarea><br />
+                                <button onclick="UpdateCase()" class="btn btn-success">OPDATER</button>
                             </div>
 
-                            <button onclick="UpdateCase()" class="btn btn-success CreateFormSpacingButton">Opdater</button>
+                            <div class="CreateFormSpacing">
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -289,18 +295,17 @@
                         <div class="CreateFormSpacing">
                             <label>Beskrivelse:</label><br />
                             <textarea id="description" class="form-control" placeholder="Beskrivelse"></textarea>
+                            <button onclick="CreateCase()" class="btn btn-success CreateFormSpacingButton">UDFØR</button>
                         </div>
-
-                        <button onclick="CreateCase()" class="btn btn-success CreateFormSpacingButton">Udfør</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script src="Scripts/CaseCreation.js"></script>
-    <script src="Scripts/StylingsJavaScript.js"></script>
-    <script src="Scripts/OpenChoseColor.js"></script>
-    <script src="Scripts/ChoseColor.js"></script>
-    <script src="Scripts/Sorting.js"></script>
+    <script type="text/javascript" src="Scripts/CaseCreation.js"></script>
+    <script type="text/javascript" src="Scripts/StylingsJavaScript.js"></script>
+    <script type="text/javascript" src="Scripts/OpenChoseColor.js"></script>
+    <script type="text/javascript" src="Scripts/ChoseColor.js"></script>
+    <script type="text/javascript" src="Scripts/Sorting.js"></script>
 </body>
 </html>
