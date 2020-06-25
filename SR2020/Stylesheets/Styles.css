@@ -1,6 +1,6 @@
 ﻿/*#region W3Styling*/
-#DropdownNav{
-    height:80px;
+#DropdownNav {
+    height: 80px;
 }
 
 .w3-bar {
@@ -70,6 +70,14 @@ body {
     background: #42a5f5;
 }
 
+#Purple {
+    background: #b200ff;
+}
+
+#Orange {
+    background: #ff6a00;
+}
+
 /*#endregion*/
 
 /*#region Login*/
@@ -84,7 +92,6 @@ body {
 }
 
 .LoginContainer {
-
 }
 
 .Login {
@@ -92,12 +99,12 @@ body {
 }
 
 .HyperTextLogin {
-    float:right;
+    float: right;
 }
 
 #LoginButton {
     margin: 0 auto;
-    float:left;
+    float: left;
 }
 /*#endregion*/
 
@@ -129,12 +136,12 @@ body {
 
 #ModalColorBoxContainer {
     margin: 0 auto;
-    height:35px;
-    width:125px;
+    height: 35px;
+    width: 125px;
 }
 
-.ModalFormControl{
-    border:none !important;
+.ModalFormControl {
+    border: none !important;
 }
 
 #casecreationBox {
@@ -159,9 +166,10 @@ body {
 
 /*#region Cases*/
 .collapseableButtonAndStatus {
-    margin-top:0.75%;
+    margin-top: 0.75%;
     padding-bottom: 2.5%;
 }
+
 .StandName {
     display: inline-block;
     margin-right: 0.5%;
@@ -188,7 +196,7 @@ body {
     width: 20%
 }
 
-#caseHeading {
+.caseHeading {
     margin: 0px !important;
     color: #fff;
 }
@@ -202,7 +210,7 @@ body {
     display: inline-block;
 }
 
-#casesHeader {
+.casesHeader {
     text-align: center;
     background-color: #005e85;
 }
@@ -228,10 +236,6 @@ body {
         margin-left: 5px;
     }
 
-.active:after {
-    content: "\2212";
-}
-
 .content {
     padding: 0 18px;
     max-height: 0;
@@ -242,7 +246,7 @@ body {
 
 .collapseableCommentArea {
     width: 100%;
-    resize:none;
+    resize: none;
 }
 
 .workerOnCase {
@@ -258,7 +262,7 @@ body {
 }
 
 .container-Edit {
-    width: 60%;
+    width: 40%;
     margin: auto;
     border: 2px solid gray;
     border-radius: 20px;
@@ -270,7 +274,6 @@ body {
 }
 
 .CreaterHeading {
-    text-align: center;
     margin-left: 20%;
     text-decoration: underline;
 }
@@ -286,6 +289,7 @@ body {
 
 .CreateFormSpacingButton {
     margin-top: 5%;
+    margin-left: 45%;
 }
 
 .StandText {
@@ -300,11 +304,84 @@ body {
 }
 
 .ModalColorBox {
-    margin-left: 4%;
+    margin-left: 9.5%;
+    margin-right: 9.5%;
+    margin-bottom: 2%;
 }
 
 .modal-content {
     background-color: #37474f !important;
     color: #fff;
-    height:auto;
+    height: auto;
+}
+
+
+
+
+
+
+.multiselect {
+    display: inline-block;
+    position: absolute;
+}
+
+#multiSelectColor {
+    width: inherit;
+    margin-left: -5.5%;
+}
+
+#multiSelectArea {
+    width: inherit;
+    margin-left: 1%;
+}
+
+.selectBox {
+    position: relative;
+}
+
+    .selectBox select {
+        width: 100%;
+        font-weight: bold;
+    }
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.checkboxes {
+    border: 1px #dadada solid;
+    background: white;
+    text-align: left;
+}
+
+#checkboxes label {
+    display: block;
+}
+
+    #checkboxes label:hover {
+        background-color: #1e90ff;
+    }
+
+.inputBox {
+    float: left;
+}
+
+.noSelect {
+    user-select: none;
+}
+
+#shortDesc {
+    margin-left: 30%;
+}
+
+#colorcheckboxes {
+    display: none;
+}
+
+#regioncheckboxes {
+    display: none;
 }
