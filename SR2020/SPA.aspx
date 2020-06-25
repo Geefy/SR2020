@@ -11,6 +11,7 @@
     <link type="text/css" href="Stylesheets/Styles.css" rel="stylesheet" media="screen and (min-width: 500px)" />
     <link type="text/css" href="bootstrap.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="Scripts/CaseHistory.js"></script>
     <script type="text/javascript" src="Scripts/ApiCall.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
@@ -43,8 +44,9 @@
         </div>
     </div>
     <div id="MainPage" class="page active">
-        <div id="casesHeader">
-            <h1 id="caseHeading">CASES</h1>
+        <div class="casesHeader">
+            <h1 class="caseHeading">CASES</h1>
+            <p style="color:white">Tlf: 6060606060 </p>
             <div>
                 <!--<div><input type="checkbox" name="mostImportenColor" value="mostImportenColor" id="mostImportenColor" /><label for="mostImportenColor">Mest vigtigte farve</label></div>-->
                 <!--<div><input type="checkbox" name="LeastImportenColor" value="LeastImportenColor" id="LeastImportenColor" /><label for="LeastImportenColor">Mindst vigtigte farve</label></div>-->
@@ -93,8 +95,12 @@
         </div>
     </div>
     <div class="page" id="CaseHistory">
-        <div id="casesHeader">
-            <h1 id="caseHeading"></h1>
+        <div class="casesHeader">
+            <h1 class="caseHeading">Case Historie</h1>
+            <select id="choseHistoryStand" name="choseHistoryStand"></select>
+            <button onclick="CaseTest()">Submit</button>
+        </div>
+        <div id="CaseBody">
         </div>
 
     </div>
@@ -206,12 +212,14 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <label>Vælg hvilken farve det skal være</label><br />
-            <div class="ColorBox ModalColorBox" id="Red" onclick="Red()"></div>
-            <div class="ColorBox ModalColorBox" id="Yellow" onclick="Yellow()"></div>
-            <div class="ColorBox ModalColorBox" id="Green" onclick="Green()"></div>
-            <div class="ColorBox ModalColorBox" id="Blue" onclick="Blue()"></div>
-            <div class="ColorBox ModalColorBox" id="Purple" onclick="Purple()"></div>
-            <div class="ColorBox ModalColorBox" id="Orange" onclick="Orange()"></div>
+            <div class="ModalColorBoxContainer">
+                <div class="ColorBox ModalColorBox" id="Red" onclick="Red()"></div>
+                <div class="ColorBox ModalColorBox" id="Yellow" onclick="Yellow()"></div>
+                <div class="ColorBox ModalColorBox" id="Green" onclick="Green()"></div>
+                <div class="ColorBox ModalColorBox" id="Blue" onclick="Blue()"></div>
+                <div class="ColorBox ModalColorBox" id="Purple" onclick="Purple()"></div>
+                <div class="ColorBox ModalColorBox" id="Orange" onclick="Orange()"></div>
+            </div>
         </div>
     </div>
 
@@ -224,13 +232,15 @@
                         <form class="CreaterForm">
                             <div class="CreateFormSpacing">
                                 <label>Vælg farve:</label><br />
-                                <div class="ColorBox ModalColorBox" id="Red" onclick="ModalRed()"></div>
-                                <div class="ColorBox ModalColorBox" id="Yellow" onclick="ModalYellow()"></div>
-                                <div class="ColorBox ModalColorBox" id="Green" onclick="ModalGreen()"></div>
-                                <div class="ColorBox ModalColorBox" id="Blue" onclick="ModalBlue()"></div>
-                                <div class="ColorBox ModalColorBox" id="Purple" onclick="ModalPurple()"></div>
-                                <div class="ColorBox ModalColorBox" id="Orange" onclick="ModalOrange()"></div>
-                                <div class="ColorBox form-control" id="NoColorModal"></div>
+                                <div class="UpdateFormColorBox">
+                                    <div class="ColorBox ModalColorBox" id="Red" onclick="ModalRed()"></div>
+                                    <div class="ColorBox ModalColorBox" id="Yellow" onclick="ModalYellow()"></div>
+                                    <div class="ColorBox ModalColorBox" id="Green" onclick="ModalGreen()"></div>
+                                    <div class="ColorBox ModalColorBox" id="Blue" onclick="ModalBlue()"></div>
+                                    <div class="ColorBox ModalColorBox" id="Purple" onclick="ModalPurple()"></div>
+                                    <div class="ColorBox ModalColorBox" id="Orange" onclick="ModalOrange()"></div>
+                                </div>
+                                    <div class="ColorBox form-control" id="NoColorModal"></div>
                                 <br />
                                 <br />
                             </div>

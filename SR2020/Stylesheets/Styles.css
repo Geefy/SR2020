@@ -304,11 +304,15 @@ body {
 }
 
 .ModalColorBox {
-    margin-left: 9.5%;
-    margin-right: 9.5%;
+    margin-right: 2%;
     margin-bottom: 2%;
 }
-
+.ModalColorBoxContainer{
+    margin-left: 43%;
+}
+.UpdateFormColorBox{
+    margin-left: 29%;
+}
 .modal-content {
     background-color: #37474f !important;
     color: #fff;
@@ -384,4 +388,8 @@ body {
 
 #regioncheckboxes {
     display: none;
+}
+
+#choseHistoryStand{
+    width:5%;
 }
