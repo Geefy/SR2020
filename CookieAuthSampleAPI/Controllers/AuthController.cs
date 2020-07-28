@@ -26,7 +26,8 @@ namespace CookieAuthSampleAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public abstract class LoginController : ControllerBase { }
+    public class AuthController : LoginController
     {
         //Provides the api for user sign in, Change <IdentityUser> to other TUser for more customization
         private readonly SignInManager<AppUser> signInManager;
