@@ -1,0 +1,395 @@
+﻿/*#region W3Styling*/
+#DropdownNav {
+    height: 80px;
+}
+
+.w3-bar {
+    background-color: #fff;
+    height: 80px !important;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+}
+
+.w3-bar-item {
+    padding: 0px !important;
+}
+
+.w3-button:hover {
+    background-color: #fff !important;
+}
+
+.w3-button {
+    width: 160px;
+}
+/*#endregion*/
+
+/*#region GeneralStyling*/
+.form-control {
+    border: 1px solid #bdbdbd !important;
+}
+
+body {
+    width: 100% !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.page {
+    display: none;
+    min-width: 100%;
+}
+
+.active {
+    display: block;
+}
+
+.textMiddle {
+    text-align: center;
+}
+
+#SchmidtsRadioLogo {
+    width: auto;
+    height: 80px;
+}
+/*#endregion*/
+
+/*#region CaseColors*/
+#Red {
+    background: #ef5350;
+}
+
+#Green {
+    background: #66bb6a;
+}
+
+#Yellow {
+    background: #ffee58;
+}
+
+#Blue {
+    background: #42a5f5;
+}
+
+#Purple {
+    background: #b200ff;
+}
+
+#Orange {
+    background: #ff6a00;
+}
+
+/*#endregion*/
+
+/*#region Login*/
+.LoginBody {
+    margin: 0 auto;
+    margin-top: 15%;
+    width: 400px;
+    height: 250px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.LoginContainer {
+}
+
+.Login {
+    margin-top: 2.5%;
+}
+
+.HyperTextLogin {
+    float: right;
+}
+
+#LoginButton {
+    margin: 0 auto;
+    float: left;
+}
+/*#endregion*/
+
+/*#region Modal*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #37474f !important;
+    color: #fff;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 2%;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+#ModalColorBoxContainer {
+    margin: 0 auto;
+    height: 35px;
+    width: 125px;
+}
+
+.ModalFormControl {
+    border: none !important;
+}
+
+#casecreationBox {
+    width: 15%;
+    margin-left: 10.6%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+/*#endregion*/
+
+/*#region Cases*/
+.collapseableButtonAndStatus {
+    margin-top: 0.75%;
+    padding-bottom: 2.5%;
+}
+
+.StandName {
+    display: inline-block;
+    margin-right: 0.5%;
+}
+
+.lastStatus {
+    float: left;
+    margin-top: 0.5%;
+}
+
+.caseButton {
+    float: right;
+    margin-left: 1%;
+}
+
+.collapseableCaseName {
+    width: 60%;
+    display: inline-block;
+    margin-left: 5%;
+}
+
+.collapseableTimer {
+    display: inline-block;
+    width: 20%
+}
+
+.caseHeading {
+    margin: 0px !important;
+    color: #fff;
+}
+
+.ColorBox {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    float: left;
+    display: inline-block;
+}
+
+.casesHeader {
+    text-align: center;
+    background-color: #005e85;
+}
+
+.collapsible {
+    background-color: #263238;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    display: inline-block;
+}
+
+    .collapsible:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
+
+.collapseableCommentArea {
+    width: 100%;
+    resize: none;
+}
+
+.workerOnCase {
+    float: left;
+    margin-top: 0.5%;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container-Edit {
+    width: 40%;
+    margin: auto;
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+.test2 {
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.CreaterHeading {
+    margin-left: 20%;
+    text-decoration: underline;
+}
+
+.CreaterForm {
+}
+
+.CreateFormSpacing {
+    margin-top: 2.5%;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.CreateFormSpacingButton {
+    margin-top: 5%;
+    margin-left: 45%;
+}
+
+.StandText {
+    float: right;
+    margin: 2.5%;
+}
+
+.CheckboxSorting {
+    display: inline-block;
+    color: #fff;
+    margin-left: 25px;
+}
+
+.ModalColorBox {
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+.ModalColorBoxContainer{
+    margin-left: 43%;
+}
+.UpdateFormColorBox{
+    margin-left: 29%;
+}
+.modal-content {
+    background-color: #37474f !important;
+    color: #fff;
+    height: auto;
+}
+
+
+
+
+
+
+.multiselect {
+    display: inline-block;
+    position: absolute;
+}
+
+#multiSelectColor {
+    width: inherit;
+    margin-left: -5.5%;
+}
+
+#multiSelectArea {
+    width: inherit;
+    margin-left: 1%;
+}
+
+.selectBox {
+    position: relative;
+}
+
+    .selectBox select {
+        width: 100%;
+        font-weight: bold;
+    }
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.checkboxes {
+    border: 1px #dadada solid;
+    background: white;
+    text-align: left;
+}
+
+#checkboxes label {
+    display: block;
+}
+
+    #checkboxes label:hover {
+        background-color: #1e90ff;
+    }
+
+.inputBox {
+    float: left;
+}
+
+.noSelect {
+    user-select: none;
+}
+
+#shortDesc {
+    margin-left: 30%;
+}
+
+#colorcheckboxes {
+    display: none;
+}
+
+#regioncheckboxes {
+    display: none;
+}
+
+#choseHistoryStand{
+    width:5%;
+}
