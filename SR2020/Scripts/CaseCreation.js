@@ -29,6 +29,7 @@ fetch(caseUrl)
         var cases = data;
         return cases.map(function (caseEL) {
             var collapsible = createNode('button'),
+                caseholder = createNode('div'),
                 content = createNode('div'),
                 caseName = createNode('div'),
                 shortDesc = createNode('p'),
@@ -76,7 +77,7 @@ fetch(caseUrl)
             personOnCase.innerHTML = UserOnCase(caseEL.userName);
             personOnCase.className = 'workerOnCase';
             takeCaseBtn.innerHTML = 'Tag opgave';
-            takeCaseBtn.className = 'btn btn-primary caseButton btnFix';
+            takeCaseBtn.className = 'btn btn-primary caseButton';
 
             var tempSplit = SplitStringWithNoNumbers(standName.innerHTML);
             colorBox.className = 'ColorBox';
@@ -100,6 +101,8 @@ fetch(caseUrl)
 
 
 
+            //Create Caseholder
+            append(document.getElementById('CaseContainterTest'), caseholder);
 
             //Create Button
             append(document.getElementById('CaseContainterTest'), collapsible);
@@ -211,10 +214,11 @@ var x = setInterval(function () {
         //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Output the result in an element with id="demo"
         //2020-6-16 15:32:45
-        startTimer[i].innerHTML = hours + "h " + minutes + "m ";
+        startTimer[i].innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
         //timers[i].innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
     }
 }, 1000);
@@ -225,14 +229,10 @@ fetch(formGetUrl)
     .then(function (data) {
         var cases = data;
         return cases.map(function (formEl) {
-            var option = createNode('option'),
-                chosehistoryStand = createNode('option');
+            var option = createNode('option');
             option.innerHTML = `${formEl.standName}`;
             option.value = `${formEl.standName}`;
-            chosehistoryStand.innerHTML = `${formEl.standName}`;
-            chosehistoryStand.value = `${formEl.standName}`;
             append(document.getElementById('choseStands'), option);
-            append(document.getElementById('choseHistoryStand'), chosehistoryStand);
         })
     })
     .catch(function (error) {

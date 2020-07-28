@@ -194,7 +194,7 @@ a:hover {
     width: 20%
 }
 
-.caseHeading {
+#caseHeading {
     margin: 0px !important;
     color: #fff;
 }
@@ -208,7 +208,7 @@ a:hover {
     display: inline-block;
 }
 
-.casesHeader {
+#casesHeader {
     text-align: center;
     background-color: #005e85;
 }
@@ -311,12 +311,9 @@ a:hover {
 }
 
 .ModalColorBox {
-    margin-left: 5%;
+    margin-right: 7.5%;
+    margin-left: 7.5%;
     margin-bottom: 2%;
-}
-
-.ModalColorBoxContainer{
-    margin-left: 10%;
 }
 
 #ModalColorBoxContainer {
@@ -334,7 +331,6 @@ a:hover {
     width: 100%;
     height: auto;
     text-align: center;
-    margin-top:25%;
 }
 
 .multiselect {
@@ -367,10 +363,3 @@ a:hover {
 
 /*#endregion*/
 
-.UpdateFormColorBox{
-    margin-left: 10%;
-}
-
-.btnFix{
-    margin-right: 12%;
-}
