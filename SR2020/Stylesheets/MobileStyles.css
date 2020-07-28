@@ -14,15 +14,6 @@
 #Blue {
     background: #42a5f5;
 }
-
-#Purple {
-    background: #b200ff;
-}
-
-#Orange {
-    background: #ff6a00;
-}
-
 /*#endregion*/
 
 /*#region GeneralStyling*/
@@ -163,7 +154,8 @@ a:hover {
 }
 
 .StandName {
-
+    display: inline-block;
+    margin-right: 0.5%;
 }
 
 .lastStatus {
@@ -233,6 +225,11 @@ a:hover {
         float: right;
         margin-left: 5px;
     }
+
+.active:after {
+    content: "\2212";
+}
+
 .content {
     padding: 0 18px;
     max-height: 0;
@@ -311,9 +308,7 @@ a:hover {
 }
 
 .ModalColorBox {
-    margin-right: 7.5%;
-    margin-left: 7.5%;
-    margin-bottom: 2%;
+    margin-right: 5%;
 }
 
 #ModalColorBoxContainer {
@@ -332,34 +327,5 @@ a:hover {
     height: auto;
     text-align: center;
 }
-
-.multiselect {
-    display: inline-block;
-    position: absolute;
-}
-
-#multiSelectColor {
-    width: inherit;
-    margin-left: -27.5%;
-}
-
-#multiSelectArea {
-    width: inherit;
-    margin-left:3.5%;
-}
-
-.checkboxes{
-    text-align:left;
-    background:white;
-}
-
-#colorcheckboxes {
-    display: none;
-}
-
-#regioncheckboxes {
-    display: none;
-}
-
 /*#endregion*/
 

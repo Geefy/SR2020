@@ -23,7 +23,7 @@
     <!--<nav class="navbar navbar-inverse">-->
     <form runat="server" style="visibility: hidden">
         <asp:HiddenField runat="server" ID="Token" Value="" />
-        <asp:HiddenField ID="hUser" Value="" runat="server" ClientIDMode="Static" />
+         <asp:HiddenField ID="hUser" Value="" runat="server" ClientIDMode="Static" />
     </form>
     <div class="w3-bar">
         <a class="w3-bar-item w3-button" id="LogoArea">
@@ -37,7 +37,6 @@
                 <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateStandForm">Opret Stadeplads</a>
                 <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CreateUserForm">Opret Bruger</a>
                 <a class="w3-bar-item w3-button dropdownButton nav-link " data-target="CreateCaseForm">Opret Case</a>
-                <a class="w3-bar-item w3-button dropdownButton nav-link adminAccess" data-target="CaseHistory">Case Historie</a>
                 <a class="w3-bar-item w3-button dropdownButton " onclick="Logout()">Log Ud</a>
             </div>
         </div>
@@ -48,55 +47,92 @@
             <div>
                 <!--<div><input type="checkbox" name="mostImportenColor" value="mostImportenColor" id="mostImportenColor" /><label for="mostImportenColor">Mest vigtigte farve</label></div>-->
                 <!--<div><input type="checkbox" name="LeastImportenColor" value="LeastImportenColor" id="LeastImportenColor" /><label for="LeastImportenColor">Mindst vigtigte farve</label></div>-->
-
-                <div class="multiselect" id="multiSelectColor">
-                    <div class="selectBox" onclick="ShowColorCheckBoxes()">
-                        <button class="checkboxes">Farve Koder</button>
-                        <div class="overSelect"></div>
-                    </div>
-                    <div id="colorcheckboxes" class="checkboxes">
-                        <label for="Yellow" class="noSelect">
-                            <input type="checkbox" name="ColorId" value="Yellow" id="Yellow" class="inputBox" />Gul</label><br class="noSelect" />
-                        <label for="Red" class="noSelect">
-                            <input type="checkbox" name="ColorId" value="Red" id="Red" class="inputBox" />Rød</label><br class="noSelect" />
-                        <label for="Green" class="noSelect">
-                            <input type="checkbox" name="ColorId" value="Green" id="Green" class="inputBox" />Grøn</label><br class="noSelect" />
-                        <label for="Blue" class="noSelect">
-                            <input type="checkbox" name="ColorId" value="Blue" id="Blue" class="inputBox" />Blå</label><br class="noSelect" />
-                        <label for="Purple" class="noSelect">
-                            <input type="checkbox" name="ColorId" value="Purple" id="Purple" class="inputBox" />Lilla</label><br class="noSelect" />
-                        <label for="Orange" class="noSelect">
-                            <input type="checkbox" name="ColorId" value="Orange" id="Orange" class="inputBox" />Orange</label><br class="noSelect" />
-                    </div>
-                </div>
-
-                <div class="multiselect" id="multiSelectArea">
-                    <div class="selectBox" onclick="ShowRegionCheckBoxes()">
-                         <button class="checkboxes">Områder</button>
-                        <div class="overSelect"></div>
-                    </div>
-                    <div id="regioncheckboxes" class="checkboxes">
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div>
                 <div class="CheckboxSorting form-check form-check-inline">
+                    <input type="checkbox" name="ColorId" value="Green" id="Green" class="form-check-input" />
+                    <label class="form-check-label" for="Green">Sorter ud fra grøn</label>
                 </div>
-                <%--    <div class="CheckboxSorting form-check form-check-inline">
+                <div class="CheckboxSorting form-check form-check-inline">
+                    <input type="checkbox" name="ColorId" value="Red" id="Red" class="form-check-input" />
+                    <label for="Red" class="form-check-label">Sorter ud fra rød</label>
+                </div>
+                <div class="CheckboxSorting form-check form-check-inline">
+                    <input type="checkbox" name="ColorId" value="Yellow" id="Yellow" class="form-check-input" />
+                    <label for="Yellow" class="form-check-label">Sorter ud fra gul</label>
+                </div>
+                <div class="CheckboxSorting form-check form-check-inline">
+                    <input type="checkbox" name="alphabeticalOrder" value="alphabeticalOrder" id="alphabeticalOrder" onchange="doalert(this)" class="form-check-input" />
+                    <label for="alphabeticalOrder" class="form-check-label">Alfabetisk rækkefølge</label>
+                </div>
+                <div class="CheckboxSorting form-check form-check-inline">
                     <input type="checkbox" name="alphabetical" value="A" id="A" class="form-check-input" />
                     <label for="A" class="form-check-label">A</label>
-                </div>--%>
+                </div>
             </div>
         </div>
-        <div class="CaseContainer" id="CaseContainterTest">
+        <div class="CasesContainer">
+            <button class="collapsible">
+                <div class="ColorBox" id="Red"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
+            <div class="content">
+                <p>Kunde navn: Netto</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="lastStatus">Sidste status: 14:58</p>
+                <button class="btn btn-primary caseButton" onclick="OpenUpadteCaseModal()">OPDATER</button>
+                <button class="btn btn-success caseButton" onclick="OpenCloseCaseModal()">AFSLUT</button>
+            </div>
+            <button class="collapsible">
+                <div class="ColorBox" id="Green"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
+            <div class="content">
+                <p>Kunde navn: GLAS MADS</p>
+                <p>Tlf:+45 8765 4321</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="workerOnCase">På casen: Claus</p>
+                <button class="btn btn-primary caseButton">OPDATER</button>
+                <button class="btn btn-success caseButton">AFSLUT</button>
+            </div>
+            <button class="collapsible">
+                <div class="ColorBox" id="Yellow"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
+            <div class="content">
+                <p>Kunde navn: LIDL</p>
+                <p>Tlf:+45 2588 5246</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="workerOnCase">På casen: Lars</p>
+                <button class="btn btn-primary caseButton">OPDATER</button>
+                <button class="btn btn-success caseButton">AFSLUT</button>
+            </div>
+            <button class="collapsible">
+                <div class="ColorBox" id="Blue"></div>
+                <div class="collapseableCaseName">
+                    <p class="StandName">Stander navn:</p>
+                    <p class="StandName">L85A-DK</p>
+                </div>
+                <div class="collapseableTimer">02:00:00</div>
+            </button>
+            <div class="content">
+                <p>Kunde navn: Netto</p>
+                <textarea class="collapseableCommentArea" rows="3" placeholder="Opgave beskrivelse" readonly></textarea>
+                <p class="lastStatus">Sidste status: 14:58</p>
+                <button class="btn btn-primary caseButton">OPDATER</button>
+                <button class="btn btn-success caseButton">AFSLUT</button>
+            </div>
         </div>
-    </div>
-    <div class="page" id="CaseHistory">
-        <div id="casesHeader">
-            <h1 id="caseHeading"></h1>
-        </div>
-
     </div>
     <div class="page" id="CreateStandForm">
         <div class="container-Edit">
@@ -154,7 +190,7 @@
                     </div>
 
                     <div class="CreateFormSpacing">
-                        <label>Telefonnummer:</label><br />
+                        <label >Telefonnummer:</label><br />
                         <input id="UserPhone" placeholder="Telefonnummer" class="form-control" />
                     </div>
 
@@ -210,8 +246,6 @@
             <div class="ColorBox ModalColorBox" id="Yellow" onclick="Yellow()"></div>
             <div class="ColorBox ModalColorBox" id="Green" onclick="Green()"></div>
             <div class="ColorBox ModalColorBox" id="Blue" onclick="Blue()"></div>
-            <div class="ColorBox ModalColorBox" id="Purple" onclick="Purple()"></div>
-            <div class="ColorBox ModalColorBox" id="Orange" onclick="Orange()"></div>
         </div>
     </div>
 
@@ -228,8 +262,6 @@
                                 <div class="ColorBox ModalColorBox" id="Yellow" onclick="ModalYellow()"></div>
                                 <div class="ColorBox ModalColorBox" id="Green" onclick="ModalGreen()"></div>
                                 <div class="ColorBox ModalColorBox" id="Blue" onclick="ModalBlue()"></div>
-                                <div class="ColorBox ModalColorBox" id="Purple" onclick="ModalPurple()"></div>
-                                <div class="ColorBox ModalColorBox" id="Orange" onclick="ModalOrange()"></div>
                                 <div class="ColorBox form-control" id="NoColorModal"></div>
                                 <br />
                                 <br />
@@ -239,6 +271,7 @@
                                 <label>Case beskrivelse:</label><br />
                                 <textarea id="updateDescription" class="form-control" placeholder="Beskrivelse"></textarea>
                             </div>
+                            <%--dasdsa--%>
                             <button onclick="UpdateCase()" class="btn btn-success CreateFormSpacingButton">Opdater</button>
                         </form>
                     </div>
@@ -256,8 +289,10 @@
                         <div class="CreateFormSpacing">
                             <label>Beskrivelse:</label><br />
                             <textarea id="description" class="form-control" placeholder="Beskrivelse"></textarea>
-                            <button onclick="CloseCase()" class="btn btn-success CreateFormSpacingButton">UDFØR</button>
+                            <button onclick="CreateCase()" class="btn btn-success CreateFormSpacingButton">UDFØR</button>
                         </div>
+                        <%--dadasd--%>
+                        <button onclick="CloseCase()" class="btn btn-success CreateFormSpacingButton">Udfør</button>
                     </form>
                 </div>
             </div>

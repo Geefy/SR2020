@@ -5,8 +5,6 @@ const userUrl = 'http://192.168.137.235:44350/api/auth/register';
 var startSort = [];
 var startDiv = [];
 var moveDiv = [];
-var sortingLetters = [];
-
 function createNode(element) {
     return document.createElement(element);
 }
@@ -32,7 +30,7 @@ fetch(caseUrl)
                 caseholder = createNode('div'),
                 content = createNode('div'),
                 caseName = createNode('div'),
-                shortDesc = createNode('p'),
+                standNameholder = createNode('p'),
                 standName = createNode('p'),
                 fixedPetersProblem = createNode('p'),
                 timer = createNode('div'),
@@ -46,9 +44,8 @@ fetch(caseUrl)
                 personOnCase = createNode('p');
 
             caseName.className = 'collapseableCaseName';
-            shortDesc.innerHTML = `${ShortenDesc(caseEL.caseDescription)}`;
-            shortDesc.className = 'StandName';
-            shortDesc.id = 'shortDesc';
+            standNameholder.className = 'StandName';
+            standNameholder.innerHTML = 'Stander navn:';
             standName.className = 'StandName';
             standName.innerHTML = `${caseEL.standName}`;
             timer.className = 'collapseableTimer';
@@ -73,17 +70,16 @@ fetch(caseUrl)
             update.addEventListener("click", function () {
                 OpenUpadteCaseModal(update.getAttribute('caseId'), update.getAttribute('caseStandName'))
             });
-
             personOnCase.innerHTML = UserOnCase(caseEL.userName);
             personOnCase.className = 'workerOnCase';
             takeCaseBtn.innerHTML = 'Tag opgave';
             takeCaseBtn.className = 'btn btn-primary caseButton';
 
-            var tempSplit = SplitStringWithNoNumbers(standName.innerHTML);
+            var tempSpluit = SplitStringWithNoNumbers(standName.innerHTML);
             colorBox.className = 'ColorBox';
             colorBox.id = `${caseEL.colorCode}`;
-            content.className = 'content ' + colorBox.id + ' colorSort ' + ' ' + tempSplit + ' ' + standName.innerHTML;
-            collapsible.className = 'collapsible ' + colorBox.id + ' colorSort ' + ' ' + tempSplit + ' ' + standName.innerHTML;
+            content.className = 'content ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' + standName.innerHTML;
+            collapsible.className = 'collapsible ' + colorBox.id + ' colorSort ' + ' ' + tempSpluit + ' ' + standName.innerHTML;
             collapsible.id = `${caseEL.caseId}`;
 
             isUserOnCase(personOnCase.innerHTML, takeCaseBtn);
@@ -92,15 +88,6 @@ fetch(caseUrl)
                 AddUserToCase(update.getAttribute('caseId'), update.getAttribute('caseStandName'), lastStatus.innerHTML, description.innerHTML, isOnCase(personOnCase.innerHTML), caseEL.colorCode, takeCaseBtn)
             });
 
-
-            if (!sortingLetters.includes(tempSplit, 0)) {
-                sortingLetters.push(tempSplit);
-            }
-
-            //Create Input for Sorting
-
-
-
             //Create Caseholder
             append(document.getElementById('CaseContainterTest'), caseholder);
 
@@ -108,8 +95,8 @@ fetch(caseUrl)
             append(document.getElementById('CaseContainterTest'), collapsible);
             append(collapsible, colorBox);
             append(collapsible, caseName);
+            append(caseName, standNameholder);
             append(caseName, standName);
-            append(caseName, shortDesc);
             append(collapsible, timer);
 
             //Create Content
@@ -125,44 +112,14 @@ fetch(caseUrl)
 
 
             LoadCases();
-
             CaseClick(collapsible);
         })
     })
-    .then(function() {
-        CreateAlphabetSorting();
-        SortAfterAlphabetical();
+    .catch(function (error) {
+        console.log(error);
     })
-    .catch (function (error) {
-    console.log(error);
-})
 
-document.addEventListener("DOMContentLoaded", CreateAlphabetSorting);
-//SortAfterAlphabetical();
 
-function CreateAlphabetSorting() {
-    sortingLetters.sort();
-    for (var i = 0; i < sortingLetters.length; i++) {
-        var inputAlphaLbl = createNode('label');
-        var inputAlphaElem = createNode('input');
-        var br = createNode('br');
-
-        inputAlphaElem.type = 'checkbox';
-        inputAlphaElem.name = 'alphabetical';
-        inputAlphaElem.id = sortingLetters[i];
-        inputAlphaElem.value = sortingLetters[i];
-        inputAlphaElem.className = 'inputBox';
-        inputAlphaLbl.for = sortingLetters[i];
-        inputAlphaLbl.innerHTML = sortingLetters[i];
-        inputAlphaLbl.className = 'noSelect';
-        br.className = 'noSelect';
-
-        append(document.getElementById('regioncheckboxes'), inputAlphaLbl);
-        append(inputAlphaLbl, inputAlphaElem);
-        append(document.getElementById('regioncheckboxes'), br);
-        LoadCases();
-    }
-}
 
 
 function UserOnCase(_onCase) {
@@ -211,7 +168,7 @@ var x = setInterval(function () {
         // Find the distance between now and the count down date
         var distance = countDownDate - now;
         // Time calculations for days, hours, minutes and seconds
-        //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -264,6 +221,7 @@ var checked = {};
 
 function toggleCheckbox(e) {
 
+
     getChecked(e.target.name);
     setVisibility();
 }
@@ -302,35 +260,6 @@ function doalert(checkboxElem) {
         }
 
     }
-}
-
-function SortAfterAlphabetical() {
-    const boddy = document.getElementById('CaseContainterTest');
-    boddy.innerHTML = '';
-
-    var temp = [];
-    for (var i = 0; i < allCases.length; i++) {
-        var tempObj = { case: allCases[i], string: SplitString(allCases[i].className), divStart: moveDiv[i] };
-
-
-        temp.push(tempObj);
-    }
-
-    temp.sort(compare);
-
-    for (var i = 0; i < temp.length; i++) {
-        append(boddy, temp[i].case);
-        append(boddy, temp[i].divStart);
-        CaseClick(temp[i].case);
-    }
-
-    var x = document.querySelectorAll('.collapsible');
-
-
-    for (var i = 0; i < x.length; i++) {
-        CaseClick(x[i]);
-    }
-
 }
 
 function getChecked(name) {
@@ -478,7 +407,7 @@ function CreateUser() {
     if (roleValue == 1)
         roleValue = true;
     else
-        roleValue = false;
+        roleValue = false; 
     try {
 
         (async () => {
@@ -509,46 +438,4 @@ function CreateUser() {
 function Logout() {
 
     window.location.href = "index.aspx";
-}
-
-
-
-
-var colorExpand = false;
-var regionExpand = false;
-
-function ShowColorCheckBoxes() {
-    var checkboxes = document.getElementById("colorcheckboxes");
-    if (!colorExpand) {
-        checkboxes.style.display = "block";
-        colorExpand = true;
-    } else {
-        checkboxes.style.display = "none";
-        colorExpand = false;
-    }
-}
-
-
-function ShowRegionCheckBoxes() {
-    var checkboxes = document.getElementById("regioncheckboxes");
-    if (!regionExpand) {
-        checkboxes.style.display = "block";
-        regionExpand = true;
-    } else {
-        checkboxes.style.display = "none";
-        regionExpand = false;
-    }
-}
-
-function ShortenDesc(fullDesc) {
-    var maxchar = 35;
-    if (fullDesc.length > maxchar) {
-        var shortDesc = '';
-        for (var i = 0; i < maxchar; i++)
-        {
-            shortDesc += fullDesc[i];
-        }
-        return shortDesc += '...';
-    }
-    return fullDesc;
 }

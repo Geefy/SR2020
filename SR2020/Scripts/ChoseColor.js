@@ -8,6 +8,7 @@ function ModalRed() {
     ModalColorBox.id = "Red";
 }
 function Blue() {
+
     ColorBox.id = "Blue";
     modal.style.display = "none";
 }
@@ -28,18 +29,4 @@ function Green() {
 }
 function ModalGreen() {
     ModalColorBox.id = "Green";
-}
-function Purple() {
-    ColorBox.id = "Purple";
-    modal.style.display = "none";
-}
-function ModalPurple() {
-    ModalColorBox.id = "Purple";
-}
-function Orange() {
-    ColorBox.id = "Orange";
-    modal.style.display = "none";
-}
-function ModalOrange() {
-    ModalColorBox.id = "Orange";
 }
