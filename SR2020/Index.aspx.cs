@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -43,7 +42,7 @@ namespace SR2020
                 using (var client = new System.Net.Http.HttpClient())
                 {
 
-                    client.BaseAddress = new Uri("http://192.168.137.235:44350/");
+                    client.BaseAddress = new Uri("http://192.168.137.235:44355/identityapi/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
                     var userLogin = new UserCredentials() { Username = Uname.Value, Password = Pword.Value };
